@@ -262,7 +262,7 @@ const styles: StyleSheetCSS = {
         flex: 1,
         backgroundImage: `url(${process.env.PUBLIC_URL + "/wallpaper.gif"})`,
         backgroundRepeat: "no-repeat, repeat",
-        backgroundSize: '1300px 700px',
+        backgroundSize: '100% 100%',
     },
     shutdown: {
         minHeight: '100%',

@@ -58,7 +58,7 @@ const MyProjects: React.FC<SoftwareProjectsProps> = (props) => {
                     <a
                         rel="noreferrer"
                         target="_blank"
-                        href="https://UsamaAslam.vercel.app/"
+                        href="https://portfolio-9u37mvrxy-u7ama.vercel.app/"
                     >
                         here
                     </a>{' '}
@@ -85,17 +85,6 @@ const MyProjects: React.FC<SoftwareProjectsProps> = (props) => {
                         <a
                             rel="noreferrer"
                             target="_blank"
-                            href="https://UsamaAslam.vercel.app/"
-                        >
-                            <p>
-                                <b>[OS Site]</b> - UsamaAslam.vercel.app
-                            </p>
-                        </a>
-                    </li>
-                    <li>
-                        <a
-                            rel="noreferrer"
-                            target="_blank"
                             href="https://github.com/Usama/portfolio-website"
                         >
                             <p>
@@ -107,10 +96,22 @@ const MyProjects: React.FC<SoftwareProjectsProps> = (props) => {
                         <a
                             rel="noreferrer"
                             target="_blank"
-                            href="https://github.com/Usama/portfolio-inner-site"
+                            href="https://portfolio-9u37mvrxy-u7ama.vercel.app/"
                         >
                             <p>
-                                <b>[GitHub]</b> - OS Site Repository
+                                <b>[OS Site]</b> - 2D Website URL
+                            </p>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a
+                            rel="noreferrer"
+                            target="_blank"
+                            href="https://github.com/U7ama/portfolio-os.git"
+                        >
+                            <p>
+                                <b>[GitHub]</b> - 2D Site Repository
                             </p>
                         </a>
                     </li>
