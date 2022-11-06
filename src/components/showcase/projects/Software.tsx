@@ -210,7 +210,7 @@ const MyProjects: React.FC<SoftwareProjectsProps> = (props) => {
                     <div style={styles.caption}>
                         <p>
                             <sub style={{ marginLeft: "200px" }}>
-                                <b>Figure 3: </b> Shop the Job complete demo.
+                                <b>Figure 4: </b> Shop the Job complete demo.
                             </sub>
                         </p>
                     </div>
@@ -255,7 +255,7 @@ const MyProjects: React.FC<SoftwareProjectsProps> = (props) => {
                     <div style={styles.caption}>
                         <p>
                             <sub style={{ marginLeft: "250px" }}>
-                                <b>Figure 2: </b> Dress IN
+                                <b>Figure 5: </b> Dress IN
                                 demo.
                             </sub>
                         </p>
