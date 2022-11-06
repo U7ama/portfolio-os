@@ -96,7 +96,7 @@ const MyProjects: React.FC<SoftwareProjectsProps> = (props) => {
                         <a
                             rel="noreferrer"
                             target="_blank"
-                            href="https://portfolio-9u37mvrxy-u7ama.vercel.app/"
+                            href="https://portfolio-os-swart.vercel.app/"
                         >
                             <p>
                                 <b>[OS Site]</b> - 2D Website URL
