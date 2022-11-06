@@ -74,10 +74,10 @@ const MyProjects: React.FC<SoftwareProjectsProps> = (props) => {
                         <a
                             rel="noreferrer"
                             target="_blank"
-                            href="https://UsamaAslam.com"
+                            href="https://portfolio-3d-seven.vercel.app/"
                         >
                             <p>
-                                <b>[3D Site]</b> - UsamaAslam.com
+                                <b>[3D Site]</b> - 3D Website URL
                             </p>
                         </a>
                     </li>
@@ -85,7 +85,7 @@ const MyProjects: React.FC<SoftwareProjectsProps> = (props) => {
                         <a
                             rel="noreferrer"
                             target="_blank"
-                            href="https://github.com/Usama/portfolio-website"
+                            href="https://gitfront.io/r/u7ama/ti52PUXtsPWH/portfolio-3d/"
                         >
                             <p>
                                 <b>[GitHub]</b> - 3D Site Repository
