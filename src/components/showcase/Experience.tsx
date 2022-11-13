@@ -10,6 +10,53 @@ const Experience: React.FC<ExperienceProps> = (props) => {
             <div style={styles.headerContainer}>
                 <div style={styles.header}>
                     <div style={styles.headerRow}>
+                        <h1 style={{ fontSize: '30px' }}>Xtreme Web Tech</h1>
+                        <a
+                            target="_blank"
+                            rel="noreferrer"
+                            href={'https://xtremewebtech.com/'}
+                        >
+                            <h4>www.xtremewebtech.com</h4>
+                        </a>
+                    </div>
+                    <div style={styles.headerRow}>
+                        <h3>Full Stack Developer</h3>
+                        <b>
+                            <p>August 2022 - Present</p>
+                        </b>
+                    </div>
+                </div>
+            </div>
+            <div className="text-block">
+                <p>
+                    Here i worked on projects mostly related to Airline industry {' '}
+                    <a target="_blank"
+                        rel="noreferrer"
+                        href={'https://www.copilottravel.com/'}>
+                        Copilot travel.{' '} </a>
+                </p>
+                <br />
+                <ul>
+                    <li>
+                        <p>
+                            Coordinated with the project and team members by daily stand-ups. Followed Agile Methodology using JIRA.
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            Developed Serverless Microservices using Nodejs and used Kong API Gateway. Then through Terraform these services deployed on GCP and AWS as Cloud Functions.
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            Followed Micro Frontend Architecture. Created NPM Packages using Nextjs and TypeScript
+                        </p>
+                    </li>
+                </ul>
+            </div>
+            <div style={styles.headerContainer}>
+                <div style={styles.header}>
+                    <div style={styles.headerRow}>
                         <h1 style={{ fontSize: '30px' }}>Stash Technologies</h1>
                         <a
                             rel="noreferrer"
@@ -56,54 +103,6 @@ const Experience: React.FC<ExperienceProps> = (props) => {
                     </li>
                 </ul>
             </div>
-            <div style={styles.headerContainer}>
-                <div style={styles.header}>
-                    <div style={styles.headerRow}>
-                        <h1 style={{ fontSize: '30px' }}>Xtreme Web Tech</h1>
-                        <a
-                            target="_blank"
-                            rel="noreferrer"
-                            href={'https://xtremewebtech.com/'}
-                        >
-                            <h4>www.xtremewebtech.com</h4>
-                        </a>
-                    </div>
-                    <div style={styles.headerRow}>
-                        <h3>Full Stack Developer</h3>
-                        <b>
-                            <p>August 2022 - Present</p>
-                        </b>
-                    </div>
-                </div>
-            </div>
-            <div className="text-block">
-                <p>
-                    Here i worked on projects mostly related to Airline industry {' '}
-                    <a target="_blank"
-                        rel="noreferrer"
-                        href={'https://www.copilottravel.com/'}>
-                        Copilot travel.{' '} </a>
-                </p>
-                <br />
-                <ul>
-                    <li>
-                        <p>
-                            Coordinated with the project and team members by daily stand-ups. Followed Agile Methodology using JIRA.
-                        </p>
-                    </li>
-                    <li>
-                        <p>
-                            Developed Serverless Microservices using Nodejs and used Kong API Gateway. Then through Terraform these services deployed on GCP and AWS as Cloud Functions.
-                        </p>
-                    </li>
-                    <li>
-                        <p>
-                            Following Micro Frontend Architecture. Created NPM Packages using Nextjs and TypeScript
-                        </p>
-                    </li>
-                </ul>
-            </div>
-
         </div>
     );
 };

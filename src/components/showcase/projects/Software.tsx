@@ -1,16 +1,18 @@
 import React from 'react';
-// @ts-ignore
-import computer from '../../../assets/pictures/projects/software/computer.mp4';
-// @ts-ignore
-import plant from '../../../assets/pictures/projects/software/plant.mp4';
-// @ts-ignore
-import shopthejob from '../../../assets/pictures/projects/software/shopthejob.mp4';
-// @ts-ignore
-import dressin from '../../../assets/pictures/projects/software/dressin.mp4';
-// @ts-ignore
-import roomph from '../../../assets/pictures/projects/software/roomph.mp4';
+// // @ts-ignore
+// import computer from '../../../assets/pictures/projects/software/computer.mp4';
+// // @ts-ignore
+// import plant from '../../../assets/pictures/projects/software/plant.mp4';
+// // @ts-ignore
+// import shopthejob from '../../../assets/pictures/projects/software/shopthejob.mp4';
+// // @ts-ignore
+// import dressin from '../../../assets/pictures/projects/software/dressin.mp4';
+// // @ts-ignore
+// import roomph from '../../../assets/pictures/projects/software/roomph.mp4';
 import ResumeDownload from '../ResumeDownload';
 import VideoAsset from '../../general/VideoAsset';
+import YoutubeEmbed from "../../general/YoutubeEmbed";
+import './style.css'
 
 export interface SoftwareProjectsProps { }
 
@@ -40,7 +42,8 @@ const MyProjects: React.FC<SoftwareProjectsProps> = (props) => {
                 </p>
                 <br />
                 <div className="captioned-image">
-                    <VideoAsset src={computer} />
+                    <YoutubeEmbed embedId="DqgwT4pzTeM" />
+                    {/* <VideoAsset src={computer} /> */}
                     <p style={styles.caption}>
                         <sub>
                             <b>Figure 1:</b> Blender Scene of the 3D website.
@@ -81,17 +84,7 @@ const MyProjects: React.FC<SoftwareProjectsProps> = (props) => {
                             </p>
                         </a>
                     </li>
-                    <li>
-                        <a
-                            rel="noreferrer"
-                            target="_blank"
-                            href="https://gitfront.io/r/u7ama/ti52PUXtsPWH/portfolio-3d/"
-                        >
-                            <p>
-                                <b>[GitHub]</b> - 3D Site Repository
-                            </p>
-                        </a>
-                    </li>
+
                     <li>
                         <a
                             rel="noreferrer"
@@ -125,7 +118,8 @@ const MyProjects: React.FC<SoftwareProjectsProps> = (props) => {
                 </p>
                 <br />
                 <div className="captioned-image">
-                    <VideoAsset src={plant} />
+                    <YoutubeEmbed embedId="czAnQxyhXVs" />
+                    {/* <VideoAsset src={plant} /> */}
                     <div style={styles.caption}>
                         <p>
                             <sub>
@@ -173,7 +167,8 @@ const MyProjects: React.FC<SoftwareProjectsProps> = (props) => {
                 </p>
                 <br />
                 <div className="captioned-image">
-                    <VideoAsset src={roomph} />
+                    <YoutubeEmbed embedId="mSMHyw9E0bM" />
+                    {/* <VideoAsset src={roomph} /> */}
                     <div style={styles.caption}>
                         <p>
                             <sub style={{ marginLeft: "200px" }}>
@@ -207,7 +202,8 @@ const MyProjects: React.FC<SoftwareProjectsProps> = (props) => {
                 </p>
                 <br />
                 <div className="captioned-image">
-                    <VideoAsset src={shopthejob} />
+                    <YoutubeEmbed embedId="da_4aiYYX7c" />
+                    {/* <VideoAsset src={shopthejob} /> */}
                     <div style={styles.caption}>
                         <p>
                             <sub style={{ marginLeft: "200px" }}>
@@ -224,7 +220,7 @@ const MyProjects: React.FC<SoftwareProjectsProps> = (props) => {
                         <a
                             rel="noreferrer"
                             target="_blank"
-                            href="https://gitfront.io/r/user-2817711/dE4ZiUR8HaF6/shopthejob/"
+                            href="https://gitfront.io/r/u7ama/dE4ZiUR8HaF6/shopthejob/"
                         >
                             <p>
                                 <b>[GitHub]</b> - Shop the Job Repository
@@ -252,7 +248,8 @@ const MyProjects: React.FC<SoftwareProjectsProps> = (props) => {
                 </p>
                 <br />
                 <div className="captioned-image">
-                    <VideoAsset src={dressin} />
+                    <YoutubeEmbed embedId="6-If7Q6rAxo" />
+                    {/* <VideoAsset src={dressin} /> */}
                     <div style={styles.caption}>
                         <p>
                             <sub style={{ marginLeft: "250px" }}>
