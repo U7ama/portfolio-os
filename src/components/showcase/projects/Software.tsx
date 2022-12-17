@@ -28,6 +28,34 @@ const MyProjects: React.FC<SoftwareProjectsProps> = (props) => {
             <br />
             <ResumeDownload />
             <br />
+
+            <div className="text-block">
+                <h2>Copilot Travel</h2>
+                <br />
+                <p>
+                    Copilot Travel is a Travel Widget that can be integrated
+                    with any website. User can search flights from multiple flight
+                    providers. User is able to customize baggages and Seat Selection.
+                </p>
+                <br />
+                <div className="captioned-image">
+                    <YoutubeEmbed embedId="ROq0q4awz2s" />
+                    {/* <VideoAsset src={computer} /> */}
+                    <p style={styles.caption}>
+                        <sub>
+                            <b>Figure 0:</b> Copilot Travel Flight Booking demo.
+                        </sub>
+                    </p>
+                </div>
+                <p>
+                    The backend of the widget consists of Cloud Functions / Subgraphs which uses
+                    Apollo Graphql. These Functions are deployed on all global regions and zones
+                    of GCP, AWS and Azure. Then after load balancing these endpoints are integrated
+                    with Nextjs TypeScript App.
+                </p>
+                <br />
+            </div>
+
             <div className="text-block">
                 <h2>My Portfolio</h2>
                 <br />
@@ -110,6 +138,44 @@ const MyProjects: React.FC<SoftwareProjectsProps> = (props) => {
                     </li>
                 </ul>
             </div>
+
+            <div className="text-block">
+                <h2>Roomph</h2>
+                <br />
+                <p>
+                    Roomph.pk is a website which i built during my internship in final year. Roomph! Is Pakistan’s largest hotel company. I built this website in Reactjs and Nodejs.
+                </p>
+                <br />
+                <div className="captioned-image">
+                    {/* <YoutubeEmbed embedId="mSMHyw9E0bM" /> */}
+                    <YoutubeEmbed embedId="aNT-ytVvBRA" />
+                    {/* <VideoAsset src={roomph} /> */}
+                    <div style={styles.caption}>
+                        <p>
+                            <sub style={{ marginLeft: "200px" }}>
+                                <b>Figure 3: </b> Roomph demo.
+                            </sub>
+                        </p>
+                    </div>
+                </div>
+
+                <br />
+                <h3>Links:</h3>
+                <ul>
+                    <li>
+                        <a
+                            rel="noreferrer"
+                            target="_blank"
+                            href="https://roomph.pk/"
+                        >
+                            <p>
+                                <b>[Site]</b> - Website URL
+                            </p>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
             <div className="text-block">
                 <h2>Intelligent Plant Taxonomy</h2>
                 <br />
@@ -159,41 +225,7 @@ const MyProjects: React.FC<SoftwareProjectsProps> = (props) => {
                     </li>
                 </ul>
             </div>
-            <div className="text-block">
-                <h2>Roomph</h2>
-                <br />
-                <p>
-                    Roomph.pk is a website which i built during my internship in final year. Roomph! Is Pakistan’s largest hotel company. I built this website in Reactjs and Nodejs.
-                </p>
-                <br />
-                <div className="captioned-image">
-                    <YoutubeEmbed embedId="mSMHyw9E0bM" />
-                    {/* <VideoAsset src={roomph} /> */}
-                    <div style={styles.caption}>
-                        <p>
-                            <sub style={{ marginLeft: "200px" }}>
-                                <b>Figure 3: </b> Roomph demo.
-                            </sub>
-                        </p>
-                    </div>
-                </div>
 
-                <br />
-                <h3>Links:</h3>
-                <ul>
-                    <li>
-                        <a
-                            rel="noreferrer"
-                            target="_blank"
-                            href="https://roomph-pk.herokuapp.com/"
-                        >
-                            <p>
-                                <b>[Site]</b> - Website URL
-                            </p>
-                        </a>
-                    </li>
-                </ul>
-            </div>
             <div className="text-block">
                 <h2>Shop the Job</h2>
                 <br />
@@ -240,6 +272,7 @@ const MyProjects: React.FC<SoftwareProjectsProps> = (props) => {
                     </li>
                 </ul>
             </div>
+
             <div className="text-block">
                 <h2>Dress IN</h2>
                 <br />
