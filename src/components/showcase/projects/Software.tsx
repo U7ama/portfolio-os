@@ -57,6 +57,27 @@ const MyProjects: React.FC<SoftwareProjectsProps> = (props) => {
             </div>
 
             <div className="text-block">
+                <h2>Pixel Copy</h2>
+                <br />
+                <p>
+                    Pixel Copy is a website for Copywriting Team that provides content without having copywriting issue. It has copy writing samples.
+                </p>
+                <br />
+                <div className="captioned-image">
+                    <YoutubeEmbed embedId="Tc7DLJVtETo" />
+                    <p style={styles.caption}>
+                        <sub>
+                            <b>Figure 1:</b> Pixel Copy demo.
+                        </sub>
+                    </p>
+                </div>
+                <p>
+                    This website uses DatoCMS for storing and updating blogs and writing samples data dynmically. Then uses GraphQl to get this data.
+                </p>
+                <br />
+            </div>
+
+            <div className="text-block">
                 <h2>My Portfolio</h2>
                 <br />
                 <p>
@@ -74,7 +95,7 @@ const MyProjects: React.FC<SoftwareProjectsProps> = (props) => {
                     {/* <VideoAsset src={computer} /> */}
                     <p style={styles.caption}>
                         <sub>
-                            <b>Figure 1:</b> Blender Scene of the 3D website.
+                            <b>Figure 2:</b> Blender Scene of the 3D website.
                             The scene from Blender was baked and exported in a
                             GLTF format.
                         </sub>
@@ -189,7 +210,7 @@ const MyProjects: React.FC<SoftwareProjectsProps> = (props) => {
                     <div style={styles.caption}>
                         <p>
                             <sub>
-                                <b>Figure 2: </b> Intelligent Plant Taxonomy
+                                <b>Figure 4: </b> Intelligent Plant Taxonomy
                                 demo, searching the plant species by uploading a picture.
                             </sub>
                         </p>
@@ -239,7 +260,7 @@ const MyProjects: React.FC<SoftwareProjectsProps> = (props) => {
                     <div style={styles.caption}>
                         <p>
                             <sub style={{ marginLeft: "200px" }}>
-                                <b>Figure 4: </b> Shop the Job complete demo.
+                                <b>Figure 5: </b> Shop the Job complete demo.
                             </sub>
                         </p>
                     </div>
@@ -286,7 +307,7 @@ const MyProjects: React.FC<SoftwareProjectsProps> = (props) => {
                     <div style={styles.caption}>
                         <p>
                             <sub style={{ marginLeft: "250px" }}>
-                                <b>Figure 5: </b> Dress IN
+                                <b>Figure 6: </b> Dress IN
                                 demo.
                             </sub>
                         </p>
