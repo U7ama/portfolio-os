@@ -11,12 +11,19 @@ import React from 'react';
 // import roomph from '../../../assets/pictures/projects/software/roomph.mp4';
 import ResumeDownload from '../ResumeDownload';
 import VideoAsset from '../../general/VideoAsset';
+import OldCarousel from './OldCarousel';
 import YoutubeEmbed from "../../general/YoutubeEmbed";
 import './style.css'
 
 export interface SoftwareProjectsProps { }
 
 const MyProjects: React.FC<SoftwareProjectsProps> = (props) => {
+    const images = [
+        '/1.png',
+        '/2.png',
+        '/3.png',
+        '/4.png',
+    ];
     return (
         <div className="site-page-content">
             <h3>My Projects</h3>
@@ -56,6 +63,25 @@ const MyProjects: React.FC<SoftwareProjectsProps> = (props) => {
                 <br />
             </div>
 
+            <div id="kong" className="text-block">
+                <h2>Kong API Gateway</h2>
+                <br />
+                <p>
+                    Created Kong Ingress on Google Kubernetes Engine (GKE) using Anthos. Written and Deployed OpenAPI: 3.0.0
+                    Specs into developer portal. Implemented OAuth.
+                </p>
+                <br />
+                <div className="captioned-image">
+                    <OldCarousel images={images} />
+                    <p style={styles.caption}>
+                        <sub>
+                            <b>Figure 1:</b> Kong API Gateway implementation overview.
+                        </sub>
+                    </p>
+                </div>
+                <br />
+            </div>
+
             <div className="text-block">
                 <h2>Pixel Copy</h2>
                 <br />
@@ -67,7 +93,7 @@ const MyProjects: React.FC<SoftwareProjectsProps> = (props) => {
                     <YoutubeEmbed embedId="Tc7DLJVtETo" />
                     <p style={styles.caption}>
                         <sub>
-                            <b>Figure 1:</b> Pixel Copy demo.
+                            <b>Figure 2:</b> Pixel Copy demo.
                         </sub>
                     </p>
                 </div>
@@ -95,7 +121,7 @@ const MyProjects: React.FC<SoftwareProjectsProps> = (props) => {
                     {/* <VideoAsset src={computer} /> */}
                     <p style={styles.caption}>
                         <sub>
-                            <b>Figure 2:</b> Blender Scene of the 3D website.
+                            <b>Figure 3:</b> Blender Scene of the 3D website.
                             The scene from Blender was baked and exported in a
                             GLTF format.
                         </sub>
@@ -174,7 +200,7 @@ const MyProjects: React.FC<SoftwareProjectsProps> = (props) => {
                     <div style={styles.caption}>
                         <p>
                             <sub style={{ marginLeft: "200px" }}>
-                                <b>Figure 3: </b> Roomph demo.
+                                <b>Figure 4: </b> Roomph demo.
                             </sub>
                         </p>
                     </div>
@@ -210,7 +236,7 @@ const MyProjects: React.FC<SoftwareProjectsProps> = (props) => {
                     <div style={styles.caption}>
                         <p>
                             <sub>
-                                <b>Figure 4: </b> Intelligent Plant Taxonomy
+                                <b>Figure 5: </b> Intelligent Plant Taxonomy
                                 demo, searching the plant species by uploading a picture.
                             </sub>
                         </p>
@@ -260,7 +286,7 @@ const MyProjects: React.FC<SoftwareProjectsProps> = (props) => {
                     <div style={styles.caption}>
                         <p>
                             <sub style={{ marginLeft: "200px" }}>
-                                <b>Figure 5: </b> Shop the Job complete demo.
+                                <b>Figure 6: </b> Shop the Job complete demo.
                             </sub>
                         </p>
                     </div>
@@ -307,7 +333,7 @@ const MyProjects: React.FC<SoftwareProjectsProps> = (props) => {
                     <div style={styles.caption}>
                         <p>
                             <sub style={{ marginLeft: "250px" }}>
-                                <b>Figure 6: </b> Dress IN
+                                <b>Figure 7: </b> Dress IN
                                 demo.
                             </sub>
                         </p>
