@@ -67,7 +67,7 @@ const MyProjects: React.FC<SoftwareProjectsProps> = (props) => {
                 <h2>Kong API Gateway</h2>
                 <br />
                 <p>
-                    Created Kong Ingress on Google Kubernetes Engine (GKE) using Anthos. Written and Deployed OpenAPI: 3.0.0
+                    Deployed Kong Ingress on Google Kubernetes Engine (GKE) using Anthos. Written and Deployed OpenAPI: 3.0.0
                     Specs into developer portal. Implemented OAuth.
                 </p>
                 <br />
