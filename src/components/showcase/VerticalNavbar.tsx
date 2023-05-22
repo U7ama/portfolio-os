@@ -54,6 +54,11 @@ const VerticalNavbar: React.FC<VerticalNavbarProps> = (props) => {
                     to="contact"
                     text="CONTACT"
                 />
+                <Link
+                    containerStyle={styles.link}
+                    to="blogs"
+                    text="BLOGS"
+                />
             </div>
             <div style={styles.spacer} />
             <div style={styles.forHireContainer} onMouseDown={goToContact}>
