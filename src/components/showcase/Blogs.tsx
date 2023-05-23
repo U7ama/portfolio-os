@@ -27,11 +27,11 @@ const Blog: React.FC<BlogProps> = (props) => {
 
     return (
         <div className="site-page-content">
-            <h1 style={{ marginLeft: -16 }}>Blog</h1>
+            <h1 style={{ marginLeft: -16 }}>Articles</h1>
             <br />
             <div className="text-block">
                 <p>
-                    Welcome to my blog! Here you will find a collection of my thoughts, experiences and reflections.
+                    Welcome to my articles! Here you will find a collection of my thoughts, experiences and reflections.
                 </p>
                 <br />
             </div>
@@ -63,7 +63,7 @@ const Blog: React.FC<BlogProps> = (props) => {
 
             <div className="text-block">
                 <p>
-                    Thanks for reading my blog! I hope that you enjoyed it.
+                    Thanks for reading my article! I hope that you enjoyed it.
                 </p>
                 <br />
                 <p>
