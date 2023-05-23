@@ -1,41 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-const blogData = [{
-    title: 'Uploading Images to Cloudflare R2 using Bash and Rclone',
-    content: `In today's technological era, the need for reliable and efficient data storage has become crucial. One of the solutions to address this requirement is to utilize cloud storage. Among several cloud storage providers, Cloudflare has recently introduced their R2 Storage service\n.
-
-    Cloudflare R2 Storage is a cost-effective, S3-compatible cloud storage service that promises zero egress bandwidth fees and doesn’t charge for data transfer. 
-
-    But, how can we upload our data, specifically images, to Cloudflare R2? One efficient way is to use a command-line program called Rclone, combined with a Bash script.
-
-    Rclone is a command-line program to sync files and directories to and from many different storage backends including cloud storage providers. And Bash is a Unix shell and command language which is widely used in many operating systems.
-
-    The script for uploading images to Cloudflare R2 using Bash and Rclone would look something like this:
-
-    \`\`\`
-    #!/bin/bash
-
-    for file in /path/to/your/images/*; do
-        rclone copy $file cloudflare:bucket
-    done
-    \`\`\`
-
-    This simple script will iterate over each file in the directory you specify (/path/to/your/images/*) and use Rclone's 'copy' command to upload each one to your specified Cloudflare bucket. 
-
-    To execute this script, you'd run the following command in your terminal:
-
-    \`\`\`
-    bash your_script.sh
-    \`\`\`
-
-    Before running this script, make sure you've installed and configured Rclone with Cloudflare R2. 
-
-    Please note, this is a very basic example and may need to be adjusted based on your specific needs. Always remember to test your scripts thoroughly before running them on production data.`,
-    date: '2023-05-25',
-    author: 'Usama Aslam',
-    image: '../../assets/pictures/blog4.jpg', // Update the path as needed
-}
-];
+import { blogData } from '../../assets/blogs/blogs';
 
 export interface BlogProps { }
 
