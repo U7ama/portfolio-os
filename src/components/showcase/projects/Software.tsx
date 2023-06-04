@@ -106,7 +106,6 @@ const MyProjects: React.FC<SoftwareProjectsProps> = (props) => {
                     At the heart of our API management, we used the Kong API
                     Gateway to regulate traffic and secure our cloud functions.
                 </p>
-                <br />
                 <div className="captioned-image">
                     <OldCarousel images={images} />
                     <p style={styles.caption}>
