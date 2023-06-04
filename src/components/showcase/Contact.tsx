@@ -5,7 +5,7 @@ import ghIcon from '../../assets/pictures/contact-gh.png';
 import inIcon from '../../assets/pictures/contact-in.png';
 import ResumeDownload from './ResumeDownload';
 
-export interface ContactProps { }
+export interface ContactProps {}
 
 // function to validate email
 const validateEmail = (email: string) => {
@@ -51,7 +51,7 @@ const Contact: React.FC<ContactProps> = (props) => {
     const handleSubmit = useCallback(() => {
         if (isFormValid) {
             setIsLoading(true);
-            fetch('https://portfolio-3d-seven.vercel.app/api/send-email', {
+            fetch('https://usamaaslam.site/api/send-email', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -115,7 +115,9 @@ const Contact: React.FC<ContactProps> = (props) => {
                     />
                     <SocialBox
                         icon={inIcon}
-                        link={'https://www.linkedin.com/in/usama-aslam-638584194'}
+                        link={
+                            'https://www.linkedin.com/in/usama-aslam-638584194'
+                        }
                     />
                     {/* <SocialBox
                         icon={twitterIcon}

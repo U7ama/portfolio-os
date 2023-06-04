@@ -22,6 +22,7 @@ export interface WindowProps {
     windowBarIcon?: IconName;
     onWidthChange?: (width: number) => void;
     onHeightChange?: (height: number) => void;
+    children?: any;
 }
 
 const Window: React.FC<WindowProps> = (props) => {
@@ -265,7 +266,7 @@ const Window: React.FC<WindowProps> = (props) => {
                         >
                             <div style={styles.contentInner}>
                                 <div style={styles.content} ref={contentRef}>
-                                    {props.children}
+                                    {props?.children}
                                 </div>
                             </div>
                         </div>

@@ -12,25 +12,24 @@ import React from 'react';
 import ResumeDownload from '../ResumeDownload';
 import VideoAsset from '../../general/VideoAsset';
 import OldCarousel from './OldCarousel';
-import YoutubeEmbed from "../../general/YoutubeEmbed";
-import './style.css'
+import YoutubeEmbed from '../../general/YoutubeEmbed';
+import './style.css';
 
-export interface SoftwareProjectsProps { }
+export interface SoftwareProjectsProps {}
 
 const MyProjects: React.FC<SoftwareProjectsProps> = (props) => {
     const images = [
         '/1.png',
         '/2.png',
-        '/3.png',
-        '/4.png',
+        // , '/3.png', '/4.png'
     ];
     return (
         <div className="site-page-content">
             <h3>My Projects</h3>
             <br />
             <p>
-                Below are some of my favorite projects I have worked on
-                over the last few years.
+                Below are some of my favorite projects I have worked on over the
+                last few years.
             </p>
             <br />
             <ResumeDownload />
@@ -40,9 +39,12 @@ const MyProjects: React.FC<SoftwareProjectsProps> = (props) => {
                 <h2>Copilot Travel</h2>
                 <br />
                 <p>
-                    Copilot Travel is a Travel Widget that can be integrated
-                    with any website. User can search flights from multiple flight
-                    providers. User is able to customize baggages and Seat Selection.
+                    Copilot Travel is a highly versatile Travel Widget that
+                    serves as a comprehensive tool for flight search and
+                    customization. It is a plug-and-play web component designed
+                    for seamless integration with any website, enhancing its
+                    functionality by providing a user-friendly interface for
+                    flight bookings.
                 </p>
                 <br />
                 <div className="captioned-image">
@@ -50,15 +52,49 @@ const MyProjects: React.FC<SoftwareProjectsProps> = (props) => {
                     {/* <VideoAsset src={computer} /> */}
                     <p style={styles.caption}>
                         <sub>
-                            <b>Figure 0:</b> Copilot Travel Flight Booking demo.
+                            <b>Figure 0:</b> Experience the Ease of Flight
+                            Booking with the Copilot Travel Demo.
                         </sub>
                     </p>
                 </div>
                 <p>
-                    The backend of the widget consists of Cloud Functions / Subgraphs which uses
-                    Apollo Graphql. These Functions are deployed on all global regions and zones
-                    of GCP, AWS and Azure. Then after load balancing these endpoints are integrated
-                    with Nextjs TypeScript App.
+                    Primarily, Copilot Travel enables users to search for
+                    flights across various providers, aggregating multiple
+                    options at their fingertips. It significantly simplifies the
+                    flight booking process, allowing users to filter and compare
+                    options based on their personal preferences and
+                    requirements. Beyond just flight search, Copilot Travel goes
+                    the extra mile to make the journey more personalized and
+                    comfortable. Users can customize their travel experience by
+                    selecting their preferred seating arrangements and
+                    specifying their baggage requirements, ensuring a journey
+                    tailored to their needs.
+                </p>
+                <br />
+                <p>
+                    The power of Copilot Travel lies in its backend
+                    architecture. It comprises Cloud Functions and Subgraphs
+                    utilizing Apollo GraphQL, a robust data-fetching platform
+                    that enables seamless interaction between the client and the
+                    server. This infrastructure is globally deployed across all
+                    regions and zones of premier cloud platforms such as Google
+                    Cloud Platform (GCP), Amazon Web Services (AWS), and
+                    Microsoft Azure. Post-deployment, these endpoints undergo
+                    load balancing to optimize their performance, enhancing the
+                    speed and reliability of the widget.
+                </p>
+                <br />
+                <p>
+                    The frontend of the Copilot Travel widget is a Next.js
+                    TypeScript application that provides a robust, scalable, and
+                    user-friendly interface. Furthermore, this frontend is
+                    encapsulated as a web component using Stencil.js and Bit
+                    components, which allows it to be integrated easily and
+                    universally into any website, irrespective of the underlying
+                    technology. This approach ensures maximum compatibility and
+                    ease of use, making Copilot Travel an ideal solution for any
+                    website looking to extend its offerings in the travel
+                    domain.
                 </p>
                 <br />
             </div>
@@ -67,26 +103,59 @@ const MyProjects: React.FC<SoftwareProjectsProps> = (props) => {
                 <h2>Kong API Gateway</h2>
                 <br />
                 <p>
-                    Deployed Kong Ingress on Google Kubernetes Engine (GKE) using Anthos. Written and Deployed OpenAPI: 3.0.0
-                    Specs into developer portal. Implemented OAuth.
+                    At the heart of our API management, we used the Kong API
+                    Gateway to regulate traffic and secure our cloud functions.
                 </p>
                 <br />
                 <div className="captioned-image">
                     <OldCarousel images={images} />
                     <p style={styles.caption}>
                         <sub>
-                            <b>Figure 1:</b> Kong API Gateway implementation overview.
+                            <b>Figure 1:</b> Kong API Gateway implementation
+                            overview.
                         </sub>
                     </p>
                 </div>
                 <br />
+                <p>
+                    At the heart of our API management, we used the Kong API
+                    Gateway to regulate traffic and secure our cloud functions.
+                    Initially, we deployed the Kong Ingress Controller on the
+                    Google Kubernetes Engine (GKE) using Anthos, a modern
+                    application management platform that extends Google Cloud
+                    services and tools to your environments, whether it's
+                    on-premise or other clouds. With the Kong Ingress set up, I
+                    proceeded to define our APIs using the OpenAPI Specification
+                    (OAS) 3.0.0. These specifications were written in a YAML or
+                    JSON document, outlining the endpoints, request/response
+                    structure, and other details for each of our APIs. After
+                    finalizing the specifications, they were deployed into the
+                    Kong Developer Portal. The portal serves as a comprehensive
+                    hub for developers, providing interactive documentation that
+                    facilitates easier API consumption.
+                </p>
+                <br />
+                <p>
+                    To further secure our API endpoints, I implemented OAuth, an
+                    open standard for access delegation. This ensured that
+                    client applications were granted limited access to user
+                    resources on an HTTP service, via a third-party application.
+                    It provided a more secure layer, controlling which
+                    applications have access to our APIs and to what extent. By
+                    incorporating Kong API Gateway, OpenAPI specifications, and
+                    OAuth, we effectively managed and secured the traffic to our
+                    cloud functions, creating an environment that was not only
+                    efficient and scalable but also reliable and secure.
+                </p>
             </div>
 
             <div className="text-block">
                 <h2>Pixel Copy</h2>
                 <br />
                 <p>
-                    Pixel Copy is a website for Copywriting Team that provides content without having copywriting issue. It has copy writing samples.
+                    Pixel Copy is a website for Copywriting Team that provides
+                    content without having copywriting issue. It has copy
+                    writing samples.
                 </p>
                 <br />
                 <div className="captioned-image">
@@ -98,7 +167,9 @@ const MyProjects: React.FC<SoftwareProjectsProps> = (props) => {
                     </p>
                 </div>
                 <p>
-                    This website uses DatoCMS for storing and updating blogs and writing samples data dynmically. Then uses GraphQl to get this data.
+                    This website uses DatoCMS for storing and updating blogs and
+                    writing samples data dynmically. Then uses GraphQl to get
+                    this data.
                 </p>
                 <br />
             </div>
@@ -107,13 +178,12 @@ const MyProjects: React.FC<SoftwareProjectsProps> = (props) => {
                 <h2>My Portfolio</h2>
                 <br />
                 <p>
-                    This is my portfolio website, and also the
-                    website you are on right now. This project was an absolute
-                    joy to make and challenged me both technically and
-                    creatively. Early in 2022, I knew I wanted to make an
-                    interactive portfolio to aid my job search. I eventually got
-                    the idea for this site around early February and began
-                    development.
+                    This is my portfolio website, and also the website you are
+                    on right now. This project was an absolute joy to make and
+                    challenged me both technically and creatively. Early in
+                    2022, I knew I wanted to make an interactive portfolio to
+                    aid my job search. I eventually got the idea for this site
+                    around early February and began development.
                 </p>
                 <br />
                 <div className="captioned-image">
@@ -187,10 +257,14 @@ const MyProjects: React.FC<SoftwareProjectsProps> = (props) => {
             </div>
 
             <div className="text-block">
-                <h2>Roomph</h2>
+                <h2>Roomph.pk</h2>
                 <br />
                 <p>
-                    Roomph.pk is a website which i built during my internship in final year. Roomph! Is Pakistan’s largest hotel company. I built this website in Reactjs and Nodejs.
+                    Roomph.pk is a leading hotel booking platform in Pakistan
+                    that I had the privilege of building during my tenure at
+                    Stash Technologies. As the largest hotel company in the
+                    country, Roomph.pk caters to a broad audience seeking
+                    comfortable and convenient accommodations.
                 </p>
                 <br />
                 <div className="captioned-image">
@@ -199,12 +273,41 @@ const MyProjects: React.FC<SoftwareProjectsProps> = (props) => {
                     {/* <VideoAsset src={roomph} /> */}
                     <div style={styles.caption}>
                         <p>
-                            <sub style={{ marginLeft: "200px" }}>
+                            <sub style={{ marginLeft: '200px' }}>
                                 <b>Figure 4: </b> Roomph demo.
                             </sub>
                         </p>
                     </div>
                 </div>
+                <p>
+                    The website is built using a combination of React.js and
+                    Node.js, a powerful tech stack that allows for a highly
+                    interactive and responsive user interface along with an
+                    efficient and secure backend. The frontend of the website,
+                    constructed with React.js, provides a dynamic and
+                    user-friendly experience. It offers various features such as
+                    browsing hotels, viewing hotel details, and making bookings.
+                    The interactive nature of React.js allows for seamless user
+                    navigation, making it easy for users to find and book their
+                    perfect accommodation. The backend of the website is powered
+                    by Node.js, providing a robust and secure foundation. It
+                    employs RESTful APIs for handling various requests such as
+                    fetching hotel data, processing bookings, and managing user
+                    profiles. The data is stored in MongoDB, a NoSQL database,
+                    ensuring efficient data retrieval and storage. This
+                    architecture allows Roomph.pk to handle multiple
+                    simultaneous requests seamlessly, thereby maintaining high
+                    performance even during peak usage times.
+                </p>
+                <br />
+                <p>
+                    In essence, Roomph.pk is a comprehensive platform for hotel
+                    bookings, offering a broad range of options to users while
+                    ensuring a smooth, intuitive browsing experience. The
+                    website encapsulates my hands-on experience with React.js
+                    and Node.js, demonstrating my ability to build scalable,
+                    high-performing web applications.
+                </p>
 
                 <br />
                 <h3>Links:</h3>
@@ -227,7 +330,15 @@ const MyProjects: React.FC<SoftwareProjectsProps> = (props) => {
                 <h2>Intelligent Plant Taxonomy</h2>
                 <br />
                 <p>
-                    Intelligent Plant Taxonomy was my final year project. This project presents a Web app for plant species that provides easy and fast access to plant species information. This project’s overarching goal is to give plant information under a single interface to allow any user to search for said information from a single place rather than searching in several places. The user interface was designed and customized to help the user search for anything related to plants and get the required information within a few clicks.
+                    Intelligent Plant Taxonomy was my final year project. This
+                    project presents a Web app for plant species that provides
+                    easy and fast access to plant species information. This
+                    project’s overarching goal is to give plant information
+                    under a single interface to allow any user to search for
+                    said information from a single place rather than searching
+                    in several places. The user interface was designed and
+                    customized to help the user search for anything related to
+                    plants and get the required information within a few clicks.
                 </p>
                 <br />
                 <div className="captioned-image">
@@ -237,13 +348,20 @@ const MyProjects: React.FC<SoftwareProjectsProps> = (props) => {
                         <p>
                             <sub>
                                 <b>Figure 5: </b> Intelligent Plant Taxonomy
-                                demo, searching the plant species by uploading a picture.
+                                demo, searching the plant species by uploading a
+                                picture.
                             </sub>
                         </p>
                     </div>
                 </div>
                 <p>
-                    Though there are many excellent search engines like Google, Bing, Yahoo, etc, they do not provide much plant species detail or other websites. This proposed Plants Identification web app solves this problem by specifically providing all plant data available and organizing it such that the user can search for plants easily and get the desired information.
+                    Though there are many excellent search engines like Google,
+                    Bing, Yahoo, etc, they do not provide much plant species
+                    detail or other websites. This proposed Plants
+                    Identification web app solves this problem by specifically
+                    providing all plant data available and organizing it such
+                    that the user can search for plants easily and get the
+                    desired information.
                 </p>
                 <br />
                 <h3>Links:</h3>
@@ -255,7 +373,8 @@ const MyProjects: React.FC<SoftwareProjectsProps> = (props) => {
                             href="https://github.com/U7ama/plant-taxonomy"
                         >
                             <p>
-                                <b>[GitHub]</b> - Intelligent Plant Taxonomy Repository
+                                <b>[GitHub]</b> - Intelligent Plant Taxonomy
+                                Repository
                             </p>
                         </a>
                     </li>
@@ -277,7 +396,9 @@ const MyProjects: React.FC<SoftwareProjectsProps> = (props) => {
                 <h2>Shop the Job</h2>
                 <br />
                 <p>
-                    Shop the Job is my personal project. This is an eCommerce website where user can search products category-wise. I used React and Tailwind CSS for this web app.
+                    Shop the Job is my personal project. This is an eCommerce
+                    website where user can search products category-wise. I used
+                    React and Tailwind CSS for this web app.
                 </p>
                 <br />
                 <div className="captioned-image">
@@ -285,7 +406,7 @@ const MyProjects: React.FC<SoftwareProjectsProps> = (props) => {
                     {/* <VideoAsset src={shopthejob} /> */}
                     <div style={styles.caption}>
                         <p>
-                            <sub style={{ marginLeft: "200px" }}>
+                            <sub style={{ marginLeft: '200px' }}>
                                 <b>Figure 6: </b> Shop the Job complete demo.
                             </sub>
                         </p>
@@ -324,7 +445,10 @@ const MyProjects: React.FC<SoftwareProjectsProps> = (props) => {
                 <h2>Dress IN</h2>
                 <br />
                 <p>
-                    I made Dress IN web app for my friend's Shopping Store located in Rawalpindi. I used MERN Stack in this project. I made an API for products using nodejs and MongoDB cluster and frontend using React and Tailwind CSS.
+                    I made Dress IN web app for my friend's Shopping Store
+                    located in Rawalpindi. I used MERN Stack in this project. I
+                    made an API for products using nodejs and MongoDB cluster
+                    and frontend using React and Tailwind CSS.
                 </p>
                 <br />
                 <div className="captioned-image">
@@ -332,9 +456,8 @@ const MyProjects: React.FC<SoftwareProjectsProps> = (props) => {
                     {/* <VideoAsset src={dressin} /> */}
                     <div style={styles.caption}>
                         <p>
-                            <sub style={{ marginLeft: "250px" }}>
-                                <b>Figure 7: </b> Dress IN
-                                demo.
+                            <sub style={{ marginLeft: '250px' }}>
+                                <b>Figure 7: </b> Dress IN demo.
                             </sub>
                         </p>
                     </div>

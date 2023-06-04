@@ -4,7 +4,7 @@ import meNow from '../../assets/pictures/currentme.jpg';
 import { Link } from 'react-router-dom';
 import ResumeDownload from './ResumeDownload';
 
-export interface AboutProps { }
+export interface AboutProps {}
 
 const About: React.FC<AboutProps> = (props) => {
     return (
@@ -16,8 +16,12 @@ const About: React.FC<AboutProps> = (props) => {
             <br />
             <div className="text-block">
                 <p>
-                    I'm Full Stack Developer currently working at Xtreme Web Tech! In 2022 I graduated from PMAS Arid University
-                    with my BS in Computer Science.
+                    Greetings! I am a proficient MERN Stack Developer currently
+                    enhancing digital solutions at Xecutors. My journey into the
+                    world of computer science initiated in 2018, when I embarked
+                    on my Bachelor's degree in Computer Science from PMAS Arid
+                    University. The knowledge and skills I gathered there came
+                    to fruition when I graduated in 2022.
                 </p>
                 <br />
                 <p>
@@ -45,10 +49,25 @@ const About: React.FC<AboutProps> = (props) => {
                     <h3>About Me</h3>
                     <br />
                     <p>
-                        In 2018, I statrted my Computer Science degree In final year, I got an
-                        internship at Stash Technologies working for the Roomph.pk, primarily focusing
-                        on frontend and backend work. I continued to work at Stash Technologies about half
-                        year then I decided to focus on other opportunities. After my Graduation i joined Xtreme Web Tech where i am currently working as Full Stack Developer
+                        The milestone of my educational journey was a coveted
+                        job opportunity at Stash Technologies in my final year.
+                        During this phase, I had the chance to work on{' '}
+                        <a
+                            href="https://roomph.pk/"
+                            target="_blank"
+                            rel="noreferrer"
+                        >
+                            Roomph.pk
+                        </a>
+                        , and some other projects honing my skills in frontend
+                        and backend development. After a rewarding tenure of
+                        half a year with Stash Technologies, I decided to
+                        broaden my horizon, seeking new challenges and
+                        experiences. Then i joined the dynamic team at Xecutors,
+                        where I am currently contributing as a MERN Stack
+                        Developer. This platform has allowed me to blend my
+                        academic learning with practical expertise, pushing the
+                        boundaries of web development.
                     </p>
                 </div>
                 <div style={styles.verticalImage}>
@@ -62,9 +81,13 @@ const About: React.FC<AboutProps> = (props) => {
             </div>
             <div className="text-block">
                 <p>
-                    Thanks for reading about me! I hope that you enjoy exploring
-                    the rest of my portfolio website and everything it has to
-                    offer. Good luck and have fun!
+                    I invite you to explore my portfolio, a culmination of my
+                    relentless passion for coding, problem-solving, and
+                    creativity. If you have any queries or need further
+                    information, please feel free to reach out. I hope you enjoy
+                    navigating through my accomplishments and projects as much
+                    as I have relished creating them. Thank you for your time
+                    and happy exploring!
                 </p>
                 <br />
                 <p>
