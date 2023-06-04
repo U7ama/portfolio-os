@@ -4,7 +4,14 @@ import colors from '../../constants/colors';
 import ghIcon from '../../assets/pictures/contact-gh.png';
 import inIcon from '../../assets/pictures/contact-in.png';
 import ResumeDownload from './ResumeDownload';
+import AWS from 'aws-sdk';
+AWS.config.update({
+    accessKeyId: process.env.REACT_APP_ACCESS_KEY_ID,
+    secretAccessKey: process.env.REACT_APP_SECRET_ACCESS_KEY,
+    region: process.env.REACT_APP_REGION,
+});
 
+const ses = new AWS.SES({ apiVersion: '2010-12-01' });
 export interface ContactProps {}
 
 // function to validate email
@@ -48,47 +55,54 @@ const Contact: React.FC<ContactProps> = (props) => {
         }
     }, [email, name, message]);
 
-    const handleSubmit = useCallback(() => {
+    const handleSubmit = useCallback(async () => {
+        const params = {
+            Destination: {
+                ToAddresses: ['u7amaaslam@gmail.com'],
+            },
+            Message: {
+                Body: {
+                    Html: {
+                        Data: `From: <h6>${name}</h6><br /><p>${'Company :'}${company}</p><br/><p>${message}</p>`,
+                    },
+                },
+                Subject: {
+                    Data: 'From Portfolio',
+                },
+            },
+            Source: `${name} <${email}>`,
+            ReplyToAddresses: [email],
+        };
+
         if (isFormValid) {
             setIsLoading(true);
-            fetch('https://usamaaslam.site/api/send-email', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({
-                    company,
-                    email,
-                    name,
-                    message,
-                }),
-            })
-                .then((res) => {
-                    if (res.status === 200) {
-                        setFormMessage(
-                            `Message successfully sent. Thank you ${name}!`
-                        );
-                        setCompany('');
-                        setEmail('');
-                        setName('');
-                        setMessage('');
-                        setFormMessageColor(colors.blue);
-                        setIsLoading(false);
-                    } else {
-                        setFormMessage(
-                            'There was an error sending your message. Please try again.'
-                        );
-                        setFormMessageColor(colors.red);
-                        setIsLoading(false);
-                    }
-                })
-                .catch((err) => {
+            try {
+                const result = await ses.sendEmail(params).promise();
+                if (result?.MessageId) {
+                    setFormMessage(
+                        `Message successfully sent. Thank you ${name}!`
+                    );
+                    setCompany('');
+                    setEmail('');
+                    setName('');
+                    setMessage('');
+                    setFormMessageColor(colors.blue);
+                    setIsLoading(false);
+                } else {
                     setFormMessage(
                         'There was an error sending your message. Please try again.'
                     );
                     setFormMessageColor(colors.red);
                     setIsLoading(false);
-                });
+                }
+            } catch (error) {
+                console.error('Error sending email:', error);
+                setFormMessage(
+                    'An error occurred while sending your message. Please try again later.'
+                );
+                setFormMessageColor(colors.red);
+                setIsLoading(false);
+            }
         } else {
             setFormMessage('Form unable to validate, please try again.');
             setFormMessageColor('red');
