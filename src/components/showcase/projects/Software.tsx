@@ -13,9 +13,10 @@ import ResumeDownload from '../ResumeDownload';
 import VideoAsset from '../../general/VideoAsset';
 import OldCarousel from './OldCarousel';
 import YoutubeEmbed from '../../general/YoutubeEmbed';
+import WebsiteEmbed from '../../general/WebsiteEmbed';
 import './style.css';
 
-export interface SoftwareProjectsProps {}
+export interface SoftwareProjectsProps { }
 
 const MyProjects: React.FC<SoftwareProjectsProps> = (props) => {
     const images = [
@@ -268,12 +269,13 @@ const MyProjects: React.FC<SoftwareProjectsProps> = (props) => {
                 <br />
                 <div className="captioned-image">
                     {/* <YoutubeEmbed embedId="mSMHyw9E0bM" /> */}
-                    <YoutubeEmbed embedId="aNT-ytVvBRA" />
+                    <WebsiteEmbed url="https://roomph.pk/" />
+
                     {/* <VideoAsset src={roomph} /> */}
                     <div style={styles.caption}>
                         <p>
                             <sub style={{ marginLeft: '200px' }}>
-                                <b>Figure 4: </b> Roomph demo.
+                                <b>Figure 4: </b> Roomph.pk demo.
                             </sub>
                         </p>
                     </div>
@@ -326,6 +328,62 @@ const MyProjects: React.FC<SoftwareProjectsProps> = (props) => {
             </div>
 
             <div className="text-block">
+                <h2>Luxe Store</h2>
+                <br />
+                <p>
+                    Luxe Store is an eCommerce
+                    website built in NextJs, TypeScript and Stripe Payment.
+                </p>
+                <br />
+                <div className="captioned-image">
+                    <WebsiteEmbed url="https://luxe-store-omega.vercel.app/" />
+                    {/* <VideoAsset src={shopthejob} /> */}
+                    <div style={styles.caption}>
+                        <p>
+                            <sub style={{ marginLeft: '200px', color: 'red' }}>
+                                <b>Note: </b> Stripe Payment will not work in iframe.
+                            </sub>
+                        </p>
+                    </div>
+                    <div style={styles.caption}>
+
+                        <p>
+                            <sub style={{ marginLeft: '200px' }}>
+                                <b>Figure 5: </b> Luxe Store complete demo.
+                            </sub>
+                        </p>
+                    </div>
+                </div>
+
+                <br />
+                <h3>Links:</h3>
+                <ul>
+                    <li>
+                        <a
+                            rel="noreferrer"
+                            target="_blank"
+                            href="https://github.com/U7ama/luxe-store"
+                        >
+                            <p>
+                                <b>[GitHub]</b> - Luxe Store Repository
+                            </p>
+                        </a>
+                    </li>
+                    <li>
+                        <a
+                            rel="noreferrer"
+                            target="_blank"
+                            href="https://luxe-store-omega.vercel.app/"
+                        >
+                            <p>
+                                <b>[Site]</b> - Website URL
+                            </p>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <div className="text-block">
                 <h2>Intelligent Plant Taxonomy</h2>
                 <br />
                 <p>
@@ -346,7 +404,7 @@ const MyProjects: React.FC<SoftwareProjectsProps> = (props) => {
                     <div style={styles.caption}>
                         <p>
                             <sub>
-                                <b>Figure 5: </b> Intelligent Plant Taxonomy
+                                <b>Figure 6: </b> Intelligent Plant Taxonomy
                                 demo, searching the plant species by uploading a
                                 picture.
                             </sub>
@@ -401,12 +459,12 @@ const MyProjects: React.FC<SoftwareProjectsProps> = (props) => {
                 </p>
                 <br />
                 <div className="captioned-image">
-                    <YoutubeEmbed embedId="da_4aiYYX7c" />
+                    <WebsiteEmbed url="https://shopthejob.vercel.app/" />
                     {/* <VideoAsset src={shopthejob} /> */}
                     <div style={styles.caption}>
                         <p>
                             <sub style={{ marginLeft: '200px' }}>
-                                <b>Figure 6: </b> Shop the Job complete demo.
+                                <b>Figure 7: </b> Shop the Job complete demo.
                             </sub>
                         </p>
                     </div>
@@ -451,12 +509,19 @@ const MyProjects: React.FC<SoftwareProjectsProps> = (props) => {
                 </p>
                 <br />
                 <div className="captioned-image">
-                    <YoutubeEmbed embedId="6-If7Q6rAxo" />
+                    <WebsiteEmbed url="https://dress-in.vercel.app/" />
                     {/* <VideoAsset src={dressin} /> */}
                     <div style={styles.caption}>
                         <p>
+                            <sub style={{ marginLeft: '200px', color: 'red' }}>
+                                <b>Note: </b> Stripe Payment will not work in iframe.
+                            </sub>
+                        </p>
+                    </div>
+                    <div style={styles.caption}>
+                        <p>
                             <sub style={{ marginLeft: '250px' }}>
-                                <b>Figure 7: </b> Dress IN demo.
+                                <b>Figure 8: </b> Dress IN demo.
                             </sub>
                         </p>
                     </div>
@@ -512,6 +577,9 @@ const styles: StyleSheetCSS = {
     caption: {
         width: '80%',
     },
+    border: {
+        border: '1px solid black'
+    }
 };
 
 export default MyProjects;
