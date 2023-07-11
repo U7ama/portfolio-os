@@ -4,7 +4,7 @@ import meNow from '../../assets/pictures/currentme.jpg';
 import { Link } from 'react-router-dom';
 import ResumeDownload from './ResumeDownload';
 
-export interface AboutProps {}
+export interface AboutProps { }
 
 const About: React.FC<AboutProps> = (props) => {
     return (
@@ -16,7 +16,7 @@ const About: React.FC<AboutProps> = (props) => {
             <br />
             <div className="text-block">
                 <p>
-                    Greetings! I am a proficient MERN Stack Developer currently
+                    Greetings! I am a proficient Full Stack Developer currently
                     enhancing digital solutions at Xecutors. My journey into the
                     world of computer science initiated in 2018, when I embarked
                     on my Bachelor's degree in Computer Science from PMAS Arid
@@ -64,7 +64,7 @@ const About: React.FC<AboutProps> = (props) => {
                         half a year with Stash Technologies, I decided to
                         broaden my horizon, seeking new challenges and
                         experiences. Then i joined the dynamic team at Xecutors,
-                        where I am currently contributing as a MERN Stack
+                        where I am currently contributing as a Full Stack
                         Developer. This platform has allowed me to blend my
                         academic learning with practical expertise, pushing the
                         boundaries of web development.

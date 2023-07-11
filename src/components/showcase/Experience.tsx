@@ -1,7 +1,7 @@
 import React from 'react';
 import ResumeDownload from './ResumeDownload';
 
-export interface ExperienceProps {}
+export interface ExperienceProps { }
 
 const Experience: React.FC<ExperienceProps> = (props) => {
     return (
@@ -20,7 +20,7 @@ const Experience: React.FC<ExperienceProps> = (props) => {
                         </a>
                     </div>
                     <div style={styles.headerRow}>
-                        <h3>MERN Stack Developer</h3>
+                        <h3>Full Stack Developer</h3>
                         <b>
                             <p>August 2022 - Present</p>
                         </b>
@@ -102,7 +102,7 @@ const Experience: React.FC<ExperienceProps> = (props) => {
                         </a>
                     </div>
                     <div style={styles.headerRow}>
-                        <h3>React NodeJS Developer</h3>
+                        <h3>React Node JS Developer</h3>
                         <b>
                             <p>Mar 2022 - August 2022</p>
                         </b>
