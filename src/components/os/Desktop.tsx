@@ -82,6 +82,15 @@ const Desktop: React.FC<DesktopProps> = (props) => {
     const [numShutdowns, setNumShutdowns] = useState(1);
     const [backgroundImageUrl, setBackgroundImageUrl] = useState('');
     const [rotationAngle, setRotationAngle] = useState(0);
+    const [imageLoaded, setImageLoaded] = useState(false);
+
+    useEffect(() => {
+        if (backgroundImageUrl) {
+            const image = new Image();
+            image.src = backgroundImageUrl;
+            image.onload = () => setImageLoaded(true);
+        }
+    }, [backgroundImageUrl]);
 
     useEffect(() => {
         const rotateBackground = () => {
@@ -240,7 +249,7 @@ const Desktop: React.FC<DesktopProps> = (props) => {
         backgroundContainer: {
             width: '100%',
             height: '100%',
-            backgroundImage: `url(${backgroundImageUrl ? backgroundImageUrl : process.env.PUBLIC_URL + "/loaderimg.png"})`,
+            backgroundImage: `url(${imageLoaded ? backgroundImageUrl : process.env.PUBLIC_URL + "/loaderimg.png"})`,
             backgroundRepeat: 'no-repeat, repeat',
             backgroundSize: '100% 100%',
             animation: `${backgroundImageUrl ? "" : "rotateBackground"} 0.8s linear infinite`, // Adjust animation duration as needed (60s in this example)
