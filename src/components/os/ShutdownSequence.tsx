@@ -243,6 +243,7 @@ const ShutdownSequence: React.FC<ShutdownSequenceProps> = ({
                         delay(6000).then(() => {
                             setLoading(false);
                             setEE(true);
+                            window.close();
                         });
                     });
                 } else {

@@ -16,6 +16,11 @@ export interface DesktopProps { }
 
 type ExtendedWindowAppProps<T> = T & WindowAppProps;
 
+async function getBingImage() {
+    const getImageResp = await fetch('https://bing.biturl.top/');
+    const response = await getImageResp.json();
+    return response?.url;
+}
 const APPLICATIONS: {
     [key in string]: {
         key: string;
@@ -75,6 +80,24 @@ const Desktop: React.FC<DesktopProps> = (props) => {
 
     const [shutdown, setShutdown] = useState(false);
     const [numShutdowns, setNumShutdowns] = useState(1);
+    const [backgroundImageUrl, setBackgroundImageUrl] = useState('');
+    const [rotationAngle, setRotationAngle] = useState(0);
+
+    useEffect(() => {
+        const rotateBackground = () => {
+            setRotationAngle((prevAngle) => prevAngle + 1);
+        };
+
+        const rotationInterval = setInterval(rotateBackground, 100); // Adjust rotation speed here (milliseconds)
+
+        return () => {
+            clearInterval(rotationInterval);
+        };
+    }, []);
+    useEffect(() => {
+        // Fetch the image URL and store it in the state
+        getBingImage().then((url) => setBackgroundImageUrl(url));
+    }, []);
 
     useEffect(() => {
         if (shutdown === true) {
@@ -201,8 +224,65 @@ const Desktop: React.FC<DesktopProps> = (props) => {
         [getHighestZIndex]
     );
 
+    const styles: StyleSheetCSS = {
+        // desktop: {
+        //     minHeight: '100%',
+        //     flex: 1,
+        //      backgroundImage: `url(${process.env.PUBLIC_URL + "/wallpaper.gif"})`,
+        //   backgroundImage: `url(${process.env.PUBLIC_URL + "/loaderimg.png"})`,
+        //   backgroundRepeat: "no-repeat, repeat",
+        //   backgroundSize: '100% 100%',
+        // },
+        desktop: {
+            minHeight: '100%',
+            flex: 1,
+        },
+        backgroundContainer: {
+            width: '100%',
+            height: '100%',
+            backgroundImage: `url(${backgroundImageUrl ? backgroundImageUrl : process.env.PUBLIC_URL + "/loaderimg.png"})`,
+            backgroundRepeat: 'no-repeat, repeat',
+            backgroundSize: '100% 100%',
+            animation: `${backgroundImageUrl ? "" : "rotateBackground"} 0.8s linear infinite`, // Adjust animation duration as needed (60s in this example)
+        },
+
+        shutdown: {
+            minHeight: '100%',
+            flex: 1,
+            backgroundColor: '#1d2e2f',
+        },
+        shortcutContainer: {
+            position: 'absolute',
+        },
+        shortcuts: {
+            position: 'absolute',
+            top: 16,
+            left: 6,
+        },
+        minimized: {
+            pointerEvents: 'none',
+            opacity: 0,
+        },
+    };
+
+    const keyframes = `
+    @keyframes rotateBackground {
+        from {
+            transform: rotate(0deg);
+        }
+        to {
+            transform: rotate(360deg);
+        }
+    }
+`;
+
+    // Append the keyframes to the document head
+    const style = document.createElement('style');
+    style.innerHTML = keyframes;
+    document.head.appendChild(style);
     return !shutdown ? (
         <div style={styles.desktop}>
+            <div style={styles.backgroundContainer}></div>
             {/* For each window in windows, loop over and render  */}
             {Object.keys(windows).map((key) => {
                 const element = windows[key].component;
@@ -256,31 +336,6 @@ const Desktop: React.FC<DesktopProps> = (props) => {
     );
 };
 
-const styles: StyleSheetCSS = {
-    desktop: {
-        minHeight: '100%',
-        flex: 1,
-        backgroundImage: `url(${process.env.PUBLIC_URL + "/wallpaper.gif"})`,
-        backgroundRepeat: "no-repeat, repeat",
-        backgroundSize: '100% 100%',
-    },
-    shutdown: {
-        minHeight: '100%',
-        flex: 1,
-        backgroundColor: '#1d2e2f',
-    },
-    shortcutContainer: {
-        position: 'absolute',
-    },
-    shortcuts: {
-        position: 'absolute',
-        top: 16,
-        left: 6,
-    },
-    minimized: {
-        pointerEvents: 'none',
-        opacity: 0,
-    },
-};
+
 
 export default Desktop;
