@@ -17,9 +17,18 @@ export interface DesktopProps {}
 type ExtendedWindowAppProps<T> = T & WindowAppProps;
 
 async function getBingImage() {
-    const getImageResp = await fetch('https://bing.biturl.top/');
+    const getImageResp = await fetch(
+        'https://api.unsplash.com/search/photos?query=old-technology&orientation=landscape',
+        {
+            headers: {
+                Authorization: `Client-ID ${process.env.WDS_SOCKET_HOST}`,
+            },
+        }
+    );
     const response = await getImageResp.json();
-    return response?.url;
+    const randomIndex = Math.floor(Math.random() * response.results.length);
+    console.log('responseUrl', response?.results[randomIndex]?.urls?.full);
+    return response?.results[randomIndex]?.urls?.full;
 }
 const APPLICATIONS: {
     [key in string]: {
