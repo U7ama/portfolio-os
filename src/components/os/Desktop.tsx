@@ -12,13 +12,22 @@ import DesktopShortcut, { DesktopShortcutProps } from './DesktopShortcut';
 import { IconName } from '../../assets/icons';
 // import Credits from '../applications/Credits';
 
-export interface DesktopProps { }
+export interface DesktopProps {}
 
 type ExtendedWindowAppProps<T> = T & WindowAppProps;
 
 async function getBingImage() {
-    const getImageResp = await fetch('https://bing.biturl.top/');
+    const searchKeyword = 'old technology';
+    const getImageResp = await fetch(
+        `https://api.unsplash.com/search/photos?query=${searchKeyword}`,
+        {
+            headers: {
+                Authorization: `Client-ID ${process.env.UNSPLASH_KEY}`,
+            },
+        }
+    );
     const response = await getImageResp.json();
+    console.log('responseWallpaper', response, process.env.UNSPLASH_KEY);
     return response?.url;
 }
 const APPLICATIONS: {
@@ -249,10 +258,16 @@ const Desktop: React.FC<DesktopProps> = (props) => {
         backgroundContainer: {
             width: '100%',
             height: '100%',
-            backgroundImage: `url(${imageLoaded ? backgroundImageUrl : process.env.PUBLIC_URL + "/loaderimg.png"})`,
+            backgroundImage: `url(${
+                imageLoaded
+                    ? backgroundImageUrl
+                    : process.env.PUBLIC_URL + '/loaderimg.png'
+            })`,
             backgroundRepeat: 'no-repeat, repeat',
             backgroundSize: '100% 100%',
-            animation: `${backgroundImageUrl ? "" : "rotateBackground"} 0.8s linear infinite`, // Adjust animation duration as needed (60s in this example)
+            animation: `${
+                backgroundImageUrl ? '' : 'rotateBackground'
+            } 0.8s linear infinite`, // Adjust animation duration as needed (60s in this example)
         },
 
         shutdown: {
@@ -344,7 +359,5 @@ const Desktop: React.FC<DesktopProps> = (props) => {
         />
     );
 };
-
-
 
 export default Desktop;
