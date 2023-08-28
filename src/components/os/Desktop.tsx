@@ -17,17 +17,8 @@ export interface DesktopProps {}
 type ExtendedWindowAppProps<T> = T & WindowAppProps;
 
 async function getBingImage() {
-    const searchKeyword = 'old technology';
-    const getImageResp = await fetch(
-        `https://api.unsplash.com/search/photos?query=${searchKeyword}`,
-        {
-            headers: {
-                Authorization: `Client-ID ${process.env.UNSPLASH_KEY}`,
-            },
-        }
-    );
+    const getImageResp = await fetch('https://bing.biturl.top/');
     const response = await getImageResp.json();
-    console.log('responseWallpaper', response, process.env.UNSPLASH_KEY);
     return response?.url;
 }
 const APPLICATIONS: {
