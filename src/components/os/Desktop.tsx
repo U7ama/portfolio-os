@@ -243,32 +243,32 @@ const Desktop: React.FC<DesktopProps> = (props) => {
     );
 
     const styles: StyleSheetCSS = {
-        // desktop: {
-        //     minHeight: '100%',
-        //     flex: 1,
-        //      backgroundImage: `url(${process.env.PUBLIC_URL + "/wallpaper.gif"})`,
-        //   backgroundImage: `url(${process.env.PUBLIC_URL + "/loaderimg.png"})`,
-        //   backgroundRepeat: "no-repeat, repeat",
-        //   backgroundSize: '100% 100%',
-        // },
         desktop: {
             minHeight: '100%',
             flex: 1,
+             backgroundImage: `url(${process.env.PUBLIC_URL + "/wallpaper.gif"})`,
+        //   backgroundImage: `url(${process.env.PUBLIC_URL + "/loaderimg.png"})`,
+          backgroundRepeat: "no-repeat, repeat",
+          backgroundSize: '100% 100%',
         },
-        backgroundContainer: {
-            width: '100%',
-            height: '100%',
-            backgroundImage: `url(${
-                imageLoaded
-                    ? backgroundImageUrl
-                    : process.env.PUBLIC_URL + '/loaderimg.png'
-            })`,
-            backgroundRepeat: 'no-repeat, repeat',
-            backgroundSize: '100% 100%',
-            animation: `${
-                backgroundImageUrl ? '' : 'rotateBackground'
-            } 0.8s linear infinite`, // Adjust animation duration as needed (60s in this example)
-        },
+        // desktop: {
+        //     minHeight: '100%',
+        //     flex: 1,
+        // },
+        // backgroundContainer: {
+        //     width: '100%',
+        //     height: '100%',
+        //     backgroundImage: `url(${
+        //         imageLoaded
+        //             ? backgroundImageUrl
+        //             : process.env.PUBLIC_URL + '/loaderimg.png'
+        //     })`,
+        //     backgroundRepeat: 'no-repeat, repeat',
+        //     backgroundSize: '100% 100%',
+        //     animation: `${
+        //         backgroundImageUrl ? '' : 'rotateBackground'
+        //     } 0.8s linear infinite`, // Adjust animation duration as needed (60s in this example)
+        // },
 
         shutdown: {
             minHeight: '100%',
