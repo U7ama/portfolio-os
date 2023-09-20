@@ -11,7 +11,7 @@ export interface ButtonProps {
 
 const Button: React.FC<ButtonProps> = ({ icon, text, onClick }) => {
     const [isHovering, setIsHovering] = useState(false);
-
+    //OK
     const handleMouseEnter = () => {
         setIsHovering(true);
     };
