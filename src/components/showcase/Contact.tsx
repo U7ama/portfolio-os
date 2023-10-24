@@ -4,14 +4,8 @@ import colors from '../../constants/colors';
 import ghIcon from '../../assets/pictures/contact-gh.png';
 import inIcon from '../../assets/pictures/contact-in.png';
 import ResumeDownload from './ResumeDownload';
-import AWS from 'aws-sdk';
-AWS.config.update({
-    accessKeyId: process.env.REACT_APP_ACCESS_KEY_ID,
-    secretAccessKey: process.env.REACT_APP_SECRET_ACCESS_KEY,
-    region: process.env.REACT_APP_REGION,
-});
+import emailjs from '@emailjs/browser';
 
-const ses = new AWS.SES({ apiVersion: '2010-12-01' });
 export interface ContactProps {}
 
 // function to validate email
@@ -77,24 +71,40 @@ const Contact: React.FC<ContactProps> = (props) => {
         if (isFormValid) {
             setIsLoading(true);
             try {
-                const result = await ses.sendEmail(params).promise();
-                if (result?.MessageId) {
-                    setFormMessage(
-                        `Message successfully sent. Thank you ${name}!`
+                emailjs
+                    .send(
+                        `${process.env.REACT_APP_SERVICE_ID}`,
+                        `${process.env.REACT_APP_TEMPLATE_ID}`,
+                        {
+                            to_name: 'Usama Aslam',
+                            from_name: name,
+                            message: message,
+                            to_email: email,
+                        },
+                        process.env.REACT_APP_PUBLIC_KEY
+                    )
+                    .then(
+                        (result) => {
+                            console.log(result.text);
+                            setFormMessage(
+                                `Message successfully sent. Thank you ${name}!`
+                            );
+                            setCompany('');
+                            setEmail('');
+                            setName('');
+                            setMessage('');
+                            setFormMessageColor(colors.blue);
+                            setIsLoading(false);
+                        },
+                        (error) => {
+                            console.log(error.text);
+                            setFormMessage(
+                                'There was an error sending your message. Please try again.'
+                            );
+                            setFormMessageColor(colors.red);
+                            setIsLoading(false);
+                        }
                     );
-                    setCompany('');
-                    setEmail('');
-                    setName('');
-                    setMessage('');
-                    setFormMessageColor(colors.blue);
-                    setIsLoading(false);
-                } else {
-                    setFormMessage(
-                        'There was an error sending your message. Please try again.'
-                    );
-                    setFormMessageColor(colors.red);
-                    setIsLoading(false);
-                }
             } catch (error) {
                 console.error('Error sending email:', error);
                 setFormMessage(
@@ -185,7 +195,7 @@ const Contact: React.FC<ContactProps> = (props) => {
                         value={email}
                         onChange={(e) => setEmail(e.target.value)}
                     />
-                    <label>
+                    {/* <label>
                         <p>
                             <b>Company (optional):</b>
                         </p>
@@ -197,7 +207,7 @@ const Contact: React.FC<ContactProps> = (props) => {
                         placeholder="Company"
                         value={company}
                         onChange={(e) => setCompany(e.target.value)}
-                    />
+                    /> */}
                     <label>
                         <p>
                             {!message && <span style={styles.star}>*</span>}
