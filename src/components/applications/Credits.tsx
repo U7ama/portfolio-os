@@ -65,7 +65,7 @@ const Credits: React.FC<CreditsProps> = (props) => {
         setTime(0);
         setCurrentSlide((currentSlide + 1) % CREDITS.length);
     };
-
+    const currentYear = new Date().getFullYear();
     return (
         // add on resize listener
         <Window
@@ -78,7 +78,7 @@ const Credits: React.FC<CreditsProps> = (props) => {
             closeWindow={props.onClose}
             onInteract={props.onInteract}
             minimizeWindow={props.onMinimize}
-            bottomLeftText={'© Copyright 2022 Usama Aslam'}
+            bottomLeftText={`© Copyright ${currentYear} Usama Aslam`}
         >
             <div
                 onMouseDown={nextSlide}
@@ -86,7 +86,7 @@ const Credits: React.FC<CreditsProps> = (props) => {
                 style={styles.credits}
             >
                 <h2>Credits</h2>
-                <p>UsamaAslam.com, 2022</p>
+                <p>usamaaslam.site, 2022</p>
                 <br />
                 <br />
                 <br />
