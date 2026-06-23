@@ -1,6 +1,7 @@
 import React, { useCallback, useEffect, useState } from 'react';
 // import Colors from '../../constants/colors';
 import ShowcaseExplorer from '../applications/ShowcaseExplorer';
+import SocialBrowser from '../applications/SocialBrowser';
 // import Doom from '../applications/Doom';
 // import OregonTrail from '../applications/OregonTrail';
 import ShutdownSequence from './ShutdownSequence';
@@ -49,6 +50,12 @@ const APPLICATIONS: {
         name: 'My Portfolio',
         shortcutIcon: 'showcaseIcon',
         component: ShowcaseExplorer,
+    },
+    browser: {
+        key: 'browser',
+        name: 'Browser',
+        shortcutIcon: 'browserIcon',
+        component: SocialBrowser,
     },
     // trail: {
     //     key: 'trail',
