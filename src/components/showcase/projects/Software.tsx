@@ -10,7 +10,6 @@ import React from 'react';
 // // @ts-ignore
 // import roomph from '../../../assets/pictures/projects/software/roomph.mp4';
 import ResumeDownload from '../ResumeDownload';
-import VideoAsset from '../../general/VideoAsset';
 import OldCarousel from './OldCarousel';
 import YoutubeEmbed from '../../general/YoutubeEmbed';
 import WebsiteEmbed from '../../general/WebsiteEmbed';

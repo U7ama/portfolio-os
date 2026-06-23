@@ -32,7 +32,6 @@ const SocialBox: React.FC<SocialBoxProps> = ({ link, icon }) => {
 };
 
 const Contact: React.FC<ContactProps> = (props) => {
-    const [company, setCompany] = useState('');
     const [email, setEmail] = useState('');
     const [name, setName] = useState('');
     const [message, setMessage] = useState('');
@@ -50,24 +49,6 @@ const Contact: React.FC<ContactProps> = (props) => {
     }, [email, name, message]);
 
     const handleSubmit = useCallback(async () => {
-        const params = {
-            Destination: {
-                ToAddresses: ['u7amaaslam@gmail.com'],
-            },
-            Message: {
-                Body: {
-                    Html: {
-                        Data: `From: <h6>${name}</h6><br /><p>${'Company :'}${company}</p><br/><p>${message}</p>`,
-                    },
-                },
-                Subject: {
-                    Data: 'From Portfolio',
-                },
-            },
-            Source: `${name} <${email}>`,
-            ReplyToAddresses: [email],
-        };
-
         if (isFormValid) {
             setIsLoading(true);
             try {
@@ -89,7 +70,6 @@ const Contact: React.FC<ContactProps> = (props) => {
                             setFormMessage(
                                 `Message successfully sent. Thank you ${name}!`
                             );
-                            setCompany('');
                             setEmail('');
                             setName('');
                             setMessage('');
@@ -117,7 +97,7 @@ const Contact: React.FC<ContactProps> = (props) => {
             setFormMessage('Form unable to validate, please try again.');
             setFormMessageColor('red');
         }
-    }, [company, email, name, message, isFormValid]);
+    }, [email, name, message, isFormValid]);
 
     useEffect(() => {
         if (formMessage.length > 0) {
