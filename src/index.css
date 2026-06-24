@@ -400,3 +400,119 @@ input:active {
     cursor: pointer;
     color: white;
 }
+@media (max-width: 900px) {
+    h1 {
+        font-size: clamp(38px, 12vw, 56px);
+        line-height: 0.95;
+    }
+
+    h2 {
+        font-size: clamp(24px, 7vw, 32px);
+    }
+
+    h3 {
+        font-size: clamp(19px, 5vw, 24px);
+    }
+
+    h4,
+    p,
+    input,
+    textarea,
+    .site-button {
+        font-size: 16px;
+    }
+
+    .toolbar-text {
+        font-size: 15px;
+    }
+
+    .showcase-header {
+        font-size: 13px;
+    }
+
+    .site-page {
+        flex-direction: column;
+        overflow: hidden;
+    }
+
+    .site-page-content {
+        margin-left: 0;
+        width: 100%;
+        padding: 20px;
+        padding-bottom: 72px;
+        box-sizing: border-box;
+    }
+
+    .text-block {
+        text-align: left;
+    }
+
+    .big-button-container {
+        padding: 16px;
+    }
+
+    ul {
+        padding-left: 20px;
+    }
+}
+
+@media (max-width: 560px) {
+    h1 {
+        font-size: clamp(34px, 14vw, 48px);
+    }
+
+    p,
+    input,
+    textarea,
+    .site-button {
+        font-size: 15px;
+    }
+
+    .site-page-content {
+        padding: 16px;
+        padding-bottom: 72px;
+    }
+
+    .container {
+        padding-top: 62.5%;
+    }
+}
+
+@media (max-width: 900px) {
+    a {
+        overflow-wrap: anywhere;
+    }
+
+    .site-page-content > div {
+        max-width: 100%;
+        flex-wrap: wrap;
+    }
+
+    .site-page-content img {
+        max-width: 100%;
+        height: auto;
+    }
+}
+
+@media (max-width: 560px) {
+    .site-page-content > div {
+        flex-direction: column;
+    }
+}
+
+.mobile-showcase-root {
+    position: absolute;
+    inset: 0 0 32px 0;
+    background: #ffffff;
+    overflow: hidden;
+    z-index: 10;
+}
+
+@media (max-width: 768px) {
+    .mobile-showcase-root .site-page {
+        position: absolute;
+        inset: 0;
+        height: 100%;
+        width: 100%;
+    }
+}

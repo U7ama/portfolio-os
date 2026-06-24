@@ -1,13 +1,7 @@
 import PropTypes from "prop-types";
-import { useState, useEffect } from 'react';
 
 const YoutubeEmbed = ({ embedId }: any) => {
-    const [autoplay, setAutoplay] = useState("")
-    useEffect(() => {
-        if (embedId === "Nrv5DMTFNUw") {
-            setAutoplay("&autoplay=1")
-        };
-    });
+    const autoplay = embedId === "Nrv5DMTFNUw" ? "&autoplay=1" : "";
 
     return (
         <div className="container">
