@@ -18,6 +18,7 @@ import windowExplorerIcon from './windowExplorerIcon.png';
 import windowsStartIcon from './windowsStartIcon.png';
 import scrabbleIcon from './scrabbleIcon.png';
 import close from './close.png';
+import browserIcon from './browserIcon.svg';
 
 const icons = {
     windowResize: windowResize,
@@ -34,6 +35,7 @@ const icons = {
     scrabbleIcon: scrabbleIcon,
     henordleIcon: henordleIcon,
     close: close,
+    browserIcon: browserIcon,
     windowGameIcon: windowGameIcon,
     windowExplorerIcon: windowExplorerIcon,
     windowsStartIcon: windowsStartIcon,

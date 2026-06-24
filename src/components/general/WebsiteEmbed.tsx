@@ -9,6 +9,7 @@ const WebsiteEmbed = ({ url }: any) => {
                 className="responsive-iframe"
                 height="480"
                 src={url}
+                title="Embedded website"
                 frameBorder="0"
                 allowFullScreen
 

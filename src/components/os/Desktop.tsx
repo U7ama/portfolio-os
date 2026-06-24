@@ -1,6 +1,7 @@
 import React, { useCallback, useEffect, useState } from 'react';
 // import Colors from '../../constants/colors';
 import ShowcaseExplorer from '../applications/ShowcaseExplorer';
+import SocialBrowser from '../applications/SocialBrowser';
 // import Doom from '../applications/Doom';
 // import OregonTrail from '../applications/OregonTrail';
 import ShutdownSequence from './ShutdownSequence';
@@ -16,20 +17,6 @@ export interface DesktopProps {}
 
 type ExtendedWindowAppProps<T> = T & WindowAppProps;
 
-async function getBingImage() {
-    const getImageResp = await fetch(
-        'https://api.unsplash.com/search/photos?query=old-technology&orientation=landscape',
-        {
-            headers: {
-                Authorization: `Client-ID ${process.env.WDS_SOCKET_HOST}`,
-            },
-        }
-    );
-    const response = await getImageResp.json();
-    const randomIndex = Math.floor(Math.random() * response.results.length);
-    console.log('responseUrl', response?.results[randomIndex]?.urls?.full);
-    return response?.results[randomIndex]?.urls?.full;
-}
 const APPLICATIONS: {
     [key in string]: {
         key: string;
@@ -49,6 +36,12 @@ const APPLICATIONS: {
         name: 'My Portfolio',
         shortcutIcon: 'showcaseIcon',
         component: ShowcaseExplorer,
+    },
+    browser: {
+        key: 'browser',
+        name: 'Browser',
+        shortcutIcon: 'browserIcon',
+        component: SocialBrowser,
     },
     // trail: {
     //     key: 'trail',
@@ -89,34 +82,6 @@ const Desktop: React.FC<DesktopProps> = (props) => {
 
     const [shutdown, setShutdown] = useState(false);
     const [numShutdowns, setNumShutdowns] = useState(1);
-    const [backgroundImageUrl, setBackgroundImageUrl] = useState('');
-    const [rotationAngle, setRotationAngle] = useState(0);
-    const [imageLoaded, setImageLoaded] = useState(false);
-
-    useEffect(() => {
-        if (backgroundImageUrl) {
-            const image = new Image();
-            image.src = backgroundImageUrl;
-            image.onload = () => setImageLoaded(true);
-        }
-    }, [backgroundImageUrl]);
-
-    useEffect(() => {
-        const rotateBackground = () => {
-            setRotationAngle((prevAngle) => prevAngle + 1);
-        };
-
-        const rotationInterval = setInterval(rotateBackground, 100); // Adjust rotation speed here (milliseconds)
-
-        return () => {
-            clearInterval(rotationInterval);
-        };
-    }, []);
-    useEffect(() => {
-        // Fetch the image URL and store it in the state
-        getBingImage().then((url) => setBackgroundImageUrl(url));
-    }, []);
-
     useEffect(() => {
         if (shutdown === true) {
             rebootDesktop();
