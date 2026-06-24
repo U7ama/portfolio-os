@@ -60,6 +60,7 @@ const Window: React.FC<WindowProps> = (props) => {
 
     const [isDragging, setIsDragging] = useState(false);
     const [isResizing, setIsResizing] = useState(false);
+    const [isMobileViewport, setIsMobileViewport] = useState(window.innerWidth <= 768);
 
     const startResize = (event: any) => {
         event.preventDefault();
@@ -184,6 +185,17 @@ const Window: React.FC<WindowProps> = (props) => {
         };
     }, []);
 
+    useEffect(() => {
+        const onWindowResize = () => {
+            setIsMobileViewport(window.innerWidth <= 768);
+        };
+
+        window.addEventListener('resize', onWindowResize, false);
+        return () => {
+            window.removeEventListener('resize', onWindowResize, false);
+        };
+    }, []);
+
     const onWindowInteract = () => {
         props.onInteract();
         setWindowActive(true);
@@ -193,12 +205,17 @@ const Window: React.FC<WindowProps> = (props) => {
     return (
         <div onMouseDown={onWindowInteract} style={styles.container}>
             <div
-                style={Object.assign({}, styles.window, {
-                    width,
-                    height,
-                    top,
-                    left,
-                })}
+                style={Object.assign(
+                    {},
+                    styles.window,
+                    {
+                        width,
+                        height,
+                        top,
+                        left,
+                    },
+                    isMobileViewport && styles.mobileWindow
+                )}
                 ref={windowRef}
             >
                 <div style={styles.windowBorderOuter}>
@@ -375,6 +392,14 @@ const styles: StyleSheetCSS = {
     window: {
         backgroundColor: Colors.lightGray,
         position: 'absolute',
+        maxWidth: '100vw',
+        maxHeight: 'calc(100vh - 32px)',
+    },
+    mobileWindow: {
+        width: 'calc(100vw - 12px)',
+        height: 'calc(100vh - 44px)',
+        top: 6,
+        left: 6,
     },
     dragHitbox: {
         position: 'absolute',

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from '../general';
 
 // import forhire from '../../assets/pictures/forHireGif.gif';
@@ -8,6 +8,18 @@ export interface HomeProps { }
 
 const Home: React.FC<HomeProps> = (props) => {
     const navigate = useNavigate();
+    const [isMobileViewport, setIsMobileViewport] = useState(window.innerWidth <= 768);
+
+    useEffect(() => {
+        const onWindowResize = () => {
+            setIsMobileViewport(window.innerWidth <= 768);
+        };
+
+        window.addEventListener('resize', onWindowResize, false);
+        return () => {
+            window.removeEventListener('resize', onWindowResize, false);
+        };
+    }, []);
 
     const goToContact = () => {
         navigate('/contact');
@@ -15,28 +27,28 @@ const Home: React.FC<HomeProps> = (props) => {
 
     return (
         <div style={styles.page}>
-            <div style={styles.header}>
-                <h1 style={styles.name}>Usama Aslam</h1>
+            <div style={Object.assign({}, styles.header, isMobileViewport && styles.mobileHeader)}>
+                <h1 style={Object.assign({}, styles.name, isMobileViewport && styles.mobileName)}>Usama Aslam</h1>
                 <h2>Full Stack Developer</h2>
             </div>
-            <div style={styles.buttons}>
-                <Link containerStyle={styles.link} to="about" text="ABOUT" />
+            <div style={Object.assign({}, styles.buttons, isMobileViewport && styles.mobileButtons)}>
+                <Link containerStyle={Object.assign({}, styles.link, isMobileViewport && styles.mobileLink)} to="about" text="ABOUT" />
                 <Link
-                    containerStyle={styles.link}
+                    containerStyle={Object.assign({}, styles.link, isMobileViewport && styles.mobileLink)}
                     to="experience"
                     text="EXPERIENCE"
                 />
                 <Link
-                    containerStyle={styles.link}
+                    containerStyle={Object.assign({}, styles.link, isMobileViewport && styles.mobileLink)}
                     to="projects"
                     text="PROJECTS"
                 />
                 <Link
-                    containerStyle={styles.link}
+                    containerStyle={Object.assign({}, styles.link, isMobileViewport && styles.mobileLink)}
                     to="contact"
                     text="CONTACT"
                 />
-                <Link containerStyle={styles.link} to="blogs" text="ARTICLES" />
+                <Link containerStyle={Object.assign({}, styles.link, isMobileViewport && styles.mobileLink)} to="blogs" text="ARTICLES" />
             </div>
             <div style={styles.forHireContainer} onMouseDown={goToContact}>
                 {/* <img src={forhire} alt="" /> */}
@@ -68,11 +80,19 @@ const styles: StyleSheetCSS = {
     buttons: {
         justifyContent: 'space-between',
     },
+    mobileButtons: {
+        flexDirection: 'column',
+        alignItems: 'center',
+        width: '100%',
+    },
     image: {
         width: 800,
     },
     link: {
         padding: 16,
+    },
+    mobileLink: {
+        padding: 9,
     },
     nowHiring: {
         backgroundColor: 'red',
@@ -89,6 +109,15 @@ const styles: StyleSheetCSS = {
         fontSize: 72,
         marginBottom: 16,
         lineHeight: 0.9,
+    },
+    mobileName: {
+        fontSize: 'clamp(42px, 15vw, 64px)',
+    },
+    mobileHeader: {
+        marginBottom: 24,
+        marginTop: 24,
+        paddingLeft: 12,
+        paddingRight: 12,
     },
 };
 

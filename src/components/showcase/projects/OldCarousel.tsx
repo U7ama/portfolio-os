@@ -25,7 +25,7 @@ const OldCarousel: React.FC<Props> = ({ images }) => {
 
   return (
     <div className="carousel-container">
-      <img src={images[currentIndex]} alt="Carousel Image" className="carousel-image" />
+      <img src={images[currentIndex]} alt="Carousel" className="carousel-image" />
       <div className="carousel-button-next" onClick={handleClickPrev}>
         <button className="carousel-button">
           &lt;
