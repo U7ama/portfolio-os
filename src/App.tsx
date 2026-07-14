@@ -1,11 +1,14 @@
 import './App.css';
 import Desktop from './components/os/Desktop';
+import { PortfolioContentProvider } from './content/PortfolioContent';
 
 function App() {
     return (
-        <div className="App">
-            <Desktop />
-        </div>
+        <PortfolioContentProvider>
+            <div className="App">
+                <Desktop />
+            </div>
+        </PortfolioContentProvider>
     );
 }
 

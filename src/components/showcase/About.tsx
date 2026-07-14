@@ -1,134 +1,140 @@
 import React from 'react';
-// import me from '../../assets/pictures/workingAtComputer.jpg';
 import meNow from '../../assets/pictures/currentme.jpg';
 import { Link } from 'react-router-dom';
 import ResumeDownload from './ResumeDownload';
+import { usePortfolioContent } from '../../content/PortfolioContent';
 
-export interface AboutProps { }
+export interface AboutProps {}
 
-const About: React.FC<AboutProps> = (props) => {
+const About: React.FC<AboutProps> = () => {
+    const { data } = usePortfolioContent();
+    const email = data.contacts.find((contact) => contact.id === 'email');
+
     return (
-        // add on resize listener
         <div className="site-page-content">
-            {/* <img src={me} style={styles.topImage} alt="" /> */}
             <h1 style={{ marginLeft: -16 }}>Welcome</h1>
-            <h3>I'm Usama Aslam</h3>
+            <h3>I'm {data.profile.name}</h3>
             <br />
             <div className="text-block">
+                {data.profile.summary.map((paragraph) => (
+                    <React.Fragment key={paragraph}>
+                        <p>{paragraph}</p>
+                        <br />
+                    </React.Fragment>
+                ))}
                 <p>
-                    Greetings! I am a proficient Full Stack Developer currently
-                    enhancing digital solutions at Xecutors. My journey into the
-                    world of computer science initiated in 2018, when I embarked
-                    on my Bachelor's degree in Computer Science from PMAS Arid
-                    University. The knowledge and skills I gathered there came
-                    to fruition when I graduated in 2022.
-                </p>
-                <br />
-                <p>
-                    Thank you for taking the time to check out my portfolio. I
-                    really hope you enjoy exploring it as much as I enjoyed
-                    building it. If you have any questions or comments, feel
-                    free to contact me using{' '}
-                    <Link to="/contact">this form</Link> or shoot me an email at{' '}
-                    <a href="mailto:u7amaaslam@gmail.com">
-                        u7amaaslam@gmail.com
-                    </a>
+                    Thank you for exploring my portfolio. You can reach me using{' '}
+                    <Link to="/contact">the contact page</Link>
+                    {email ? (
+                        <>
+                            {' '}or email me at <a href={email.url}>{email.url.replace('mailto:', '')}</a>.
+                        </>
+                    ) : (
+                        '.'
+                    )}
                 </p>
             </div>
+
             <ResumeDownload />
 
-            <div style={{}}>
-                <div
-                    style={{
-                        flex: 1,
-                        textAlign: 'justify',
-                        alignSelf: 'center',
-                        flexDirection: 'column',
-                    }}
-                >
-                    <h3>About Me</h3>
+            <div style={styles.aboutRow}>
+                <div style={styles.aboutText}>
+                    <h3>Areas of Focus</h3>
                     <br />
-                    <p>
-                        The milestone of my educational journey was a coveted
-                        job opportunity at Stash Technologies in my final year.
-                        During this phase, I had the chance to work on{' '}
-                        <a
-                            href="https://roomph.pk/"
-                            target="_blank"
-                            rel="noreferrer"
-                        >
-                            Roomph.pk
-                        </a>
-                        , and some other projects honing my skills in frontend
-                        and backend development. After a rewarding tenure of
-                        half a year with Stash Technologies, I decided to
-                        broaden my horizon, seeking new challenges and
-                        experiences. Then i joined the dynamic team at Xecutors,
-                        where I am currently contributing as a Full Stack
-                        Developer. This platform has allowed me to blend my
-                        academic learning with practical expertise, pushing the
-                        boundaries of web development.
-                    </p>
+                    <p>{data.profile.disciplines.join(' · ')}</p>
+                    <br />
+                    <h3>Skills</h3>
+                    {data.skills.map((group) => (
+                        <div key={group.id} style={styles.group}>
+                            <h4>{group.label}</h4>
+                            <p>{group.items.join(' · ')}</p>
+                        </div>
+                    ))}
                 </div>
                 <div style={styles.verticalImage}>
-                    <img src={meNow} style={styles.image} alt="" />
+                    <img src={meNow} style={styles.image} alt={data.profile.name} />
                     <p>
-                        <sub>
-                            <b>Figure 2:</b> Me, April 2022
-                        </sub>
+                        <sub>{data.profile.name}</sub>
                     </p>
                 </div>
             </div>
+
             <div className="text-block">
-                <p>
-                    I invite you to explore my portfolio, a culmination of my
-                    relentless passion for coding, problem-solving, and
-                    creativity. If you have any queries or need further
-                    information, please feel free to reach out. I hope you enjoy
-                    navigating through my accomplishments and projects as much
-                    as I have relished creating them. Thank you for your time
-                    and happy exploring!
-                </p>
-                <br />
-                <p>
-                    If you have any questions or comments I would love to hear
-                    them. You can reach me through the{' '}
-                    <Link to="/contact">contact page</Link> or shoot me an email
-                    at{' '}
-                    <a href="mailto:u7amaaslam@gmail.com">
-                        u7amaaslam@gmail.com
-                    </a>
-                </p>
+                <h2>Education</h2>
+                {data.education.map((item) => (
+                    <div key={item.id} style={styles.sectionEntry}>
+                        <h3>{item.qualification}</h3>
+                        <h4>
+                            {item.institution} · {item.location} · {item.period}
+                        </h4>
+                        {item.details.map((detail) => (
+                            <p key={detail}>{detail}</p>
+                        ))}
+                        {item.links.map((link) => (
+                            <a
+                                key={link.url}
+                                href={link.url}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                {link.label}
+                            </a>
+                        ))}
+                    </div>
+                ))}
+            </div>
+
+            <div className="text-block">
+                <h2>Portfolio Sites</h2>
+                <ul>
+                    {data.sites.map((site) => (
+                        <li key={site.id}>
+                            <a
+                                href={site.url}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                <p>{site.label}</p>
+                            </a>
+                        </li>
+                    ))}
+                </ul>
             </div>
         </div>
     );
 };
 
 const styles: StyleSheetCSS = {
-    contentHeader: {
-        marginBottom: 16,
-        fontSize: 48,
-    },
     image: {
         height: 'auto',
         width: '100%',
     },
-    topImage: {
-        height: 'auto',
+    aboutRow: {
         width: '100%',
+        alignItems: 'flex-start',
+        marginTop: 32,
         marginBottom: 32,
+    },
+    aboutText: {
+        flex: 1,
+        flexDirection: 'column',
     },
     verticalImage: {
         alignSelf: 'center',
-        // width: '80%',
         marginLeft: 32,
-        marginTop: '40px',
-        flex: 0.8,
-
+        flex: 0.55,
         alignItems: 'center',
-        // marginBottom: 32,
         textAlign: 'center',
         flexDirection: 'column',
+    },
+    group: {
+        flexDirection: 'column',
+        marginTop: 16,
+    },
+    sectionEntry: {
+        flexDirection: 'column',
+        marginTop: 24,
+        gap: 8,
     },
 };
 

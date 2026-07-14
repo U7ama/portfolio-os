@@ -12,6 +12,7 @@ import MyProjects from '../showcase/projects/Software';
 // import ArtProjects from '../showcase/projects/Art';
 import VerticalNavbar from '../showcase/VerticalNavbar';
 import useInitialWindowSize from '../../hooks/useInitialWindowSize';
+import { PortfolioContentNotice } from '../../content/PortfolioContent';
 
 export interface ShowcaseExplorerProps extends WindowAppProps { }
 
@@ -34,6 +35,7 @@ const ShowcaseExplorer: React.FC<ShowcaseExplorerProps> = (props) => {
             <Router>
                 <div className="site-page">
                     <VerticalNavbar />
+                    <PortfolioContentNotice />
                     <Routes>
                         <Route path="/" element={<Home />} />
                         <Route path="/about" element={<About />} />

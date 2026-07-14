@@ -1,7 +1,6 @@
 import React, { useCallback, useEffect, useState } from 'react';
 // import Colors from '../../constants/colors';
 import ShowcaseExplorer from '../applications/ShowcaseExplorer';
-import SocialBrowser from '../applications/SocialBrowser';
 // import Doom from '../applications/Doom';
 // import OregonTrail from '../applications/OregonTrail';
 import ShutdownSequence from './ShutdownSequence';
@@ -17,20 +16,6 @@ export interface DesktopProps {}
 
 type ExtendedWindowAppProps<T> = T & WindowAppProps;
 
-async function getBingImage() {
-    const getImageResp = await fetch(
-        'https://api.unsplash.com/search/photos?query=old-technology&orientation=landscape',
-        {
-            headers: {
-                Authorization: `Client-ID ${process.env.WDS_SOCKET_HOST}`,
-            },
-        }
-    );
-    const response = await getImageResp.json();
-    const randomIndex = Math.floor(Math.random() * response.results.length);
-    console.log('responseUrl', response?.results[randomIndex]?.urls?.full);
-    return response?.results[randomIndex]?.urls?.full;
-}
 const APPLICATIONS: {
     [key in string]: {
         key: string;
@@ -50,12 +35,6 @@ const APPLICATIONS: {
         name: 'My Portfolio',
         shortcutIcon: 'showcaseIcon',
         component: ShowcaseExplorer,
-    },
-    browser: {
-        key: 'browser',
-        name: 'Browser',
-        shortcutIcon: 'browserIcon',
-        component: SocialBrowser,
     },
     // trail: {
     //     key: 'trail',
@@ -96,33 +75,6 @@ const Desktop: React.FC<DesktopProps> = (props) => {
 
     const [shutdown, setShutdown] = useState(false);
     const [numShutdowns, setNumShutdowns] = useState(1);
-    const [backgroundImageUrl, setBackgroundImageUrl] = useState('');
-    const [rotationAngle, setRotationAngle] = useState(0);
-    const [imageLoaded, setImageLoaded] = useState(false);
-
-    useEffect(() => {
-        if (backgroundImageUrl) {
-            const image = new Image();
-            image.src = backgroundImageUrl;
-            image.onload = () => setImageLoaded(true);
-        }
-    }, [backgroundImageUrl]);
-
-    useEffect(() => {
-        const rotateBackground = () => {
-            setRotationAngle((prevAngle) => prevAngle + 1);
-        };
-
-        const rotationInterval = setInterval(rotateBackground, 100); // Adjust rotation speed here (milliseconds)
-
-        return () => {
-            clearInterval(rotationInterval);
-        };
-    }, []);
-    useEffect(() => {
-        // Fetch the image URL and store it in the state
-        getBingImage().then((url) => setBackgroundImageUrl(url));
-    }, []);
 
     useEffect(() => {
         if (shutdown === true) {
@@ -253,30 +205,10 @@ const Desktop: React.FC<DesktopProps> = (props) => {
         desktop: {
             minHeight: '100%',
             flex: 1,
-             backgroundImage: `url(${process.env.PUBLIC_URL + "/wallpaper.gif"})`,
-        //   backgroundImage: `url(${process.env.PUBLIC_URL + "/loaderimg.png"})`,
-          backgroundRepeat: "no-repeat, repeat",
-          backgroundSize: '100% 100%',
+            backgroundImage: `url("${import.meta.env.BASE_URL}wallpaper.gif")`,
+            backgroundRepeat: 'no-repeat, repeat',
+            backgroundSize: '100% 100%',
         },
-        // desktop: {
-        //     minHeight: '100%',
-        //     flex: 1,
-        // },
-        // backgroundContainer: {
-        //     width: '100%',
-        //     height: '100%',
-        //     backgroundImage: `url(${
-        //         imageLoaded
-        //             ? backgroundImageUrl
-        //             : process.env.PUBLIC_URL + '/loaderimg.png'
-        //     })`,
-        //     backgroundRepeat: 'no-repeat, repeat',
-        //     backgroundSize: '100% 100%',
-        //     animation: `${
-        //         backgroundImageUrl ? '' : 'rotateBackground'
-        //     } 0.8s linear infinite`, // Adjust animation duration as needed (60s in this example)
-        // },
-
         shutdown: {
             minHeight: '100%',
             flex: 1,
@@ -296,24 +228,8 @@ const Desktop: React.FC<DesktopProps> = (props) => {
         },
     };
 
-    const keyframes = `
-    @keyframes rotateBackground {
-        from {
-            transform: rotate(0deg);
-        }
-        to {
-            transform: rotate(360deg);
-        }
-    }
-`;
-
-    // Append the keyframes to the document head
-    const style = document.createElement('style');
-    style.innerHTML = keyframes;
-    document.head.appendChild(style);
     return !shutdown ? (
         <div style={styles.desktop}>
-            <div style={styles.backgroundContainer}></div>
             {/* For each window in windows, loop over and render  */}
             {Object.keys(windows).map((key) => {
                 const element = windows[key].component;

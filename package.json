@@ -3,52 +3,29 @@
     "version": "0.1.0",
     "private": true,
     "dependencies": {
-        "@emailjs/browser": "^3.11.0",
-        "@testing-library/jest-dom": "^5.16.2",
-        "@testing-library/react": "^12.1.4",
-        "@testing-library/user-event": "^13.5.0",
-        "@types/jest": "^27.4.1",
-        "@types/node": "^16.11.26",
-        "@types/react-dom": "^17.0.13",
-        "aws-sdk": "^2.1390.0",
-        "emulators-ui": "^0.73.1",
-        "framer-motion": "^6.2.9",
-        "js-dos": "^7.3.9",
-        "react": "^17.0.2",
-        "react-dom": "^17.0.2",
-        "react-player": "^2.11.0",
-        "react-router-dom": "^6.2.2",
-        "react-scripts": "5.0.0",
-        "typescript": "^4.6.2",
-        "usehooks-ts": "^2.5.1",
-        "web-vitals": "^2.1.4"
+        "@emailjs/browser": "^3.12.1",
+        "framer-motion": "^6.5.1",
+        "js-dos": "^8.4.0",
+        "react": "^18.3.1",
+        "react-dom": "^18.3.1",
+        "react-router-dom": "^6.30.3",
+        "usehooks-ts": "^2.16.0"
     },
     "scripts": {
-        "start": "react-scripts start",
-        "build": "react-scripts build",
-        "test": "react-scripts test",
-        "eject": "react-scripts eject"
+        "start": "vite",
+        "build": "tsc --noEmit && vite build",
+        "preview": "vite preview",
+        "test:content": "node --experimental-strip-types --test tests/portfolio.test.mts",
+        "typecheck": "tsc --noEmit"
     },
-    "eslintConfig": {
-        "extends": [
-            "react-app",
-            "react-app/jest"
-        ]
-    },
-    "browserslist": {
-        "production": [
-            ">0.2%",
-            "not dead",
-            "not op_mini all"
-        ],
-        "development": [
-            "last 1 chrome version",
-            "last 1 firefox version",
-            "last 1 safari version"
-        ]
+    "engines": {
+        "node": ">=22.12.0"
     },
     "devDependencies": {
-        "@types/react": "^18.2.8",
-        "@types/react-slick": "^0.23.10"
+        "@types/react": "^18.3.31",
+        "@types/react-dom": "^18.3.7",
+        "@vitejs/plugin-react": "^5.1.4",
+        "typescript": "^5.9.3",
+        "vite": "^7.3.6"
     }
 }

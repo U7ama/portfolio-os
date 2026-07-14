@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#000000" />
+  <meta name="description" content="" />
+  <base target="_parent">
+  <link rel="stylesheet" href="https://use.typekit.net/llo2eru.css" />
+  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+  <link rel="manifest" href="/manifest.json" />
+  <title>Usama Aslam - OS</title>
+  <script>
+    window.addEventListener('load', () => {
+      const trustedParentOrigins = new Set([
+        'https://3d.usamaaslam.site',
+      ]);
+
+      const postToTrustedParent = (message) => {
+        if (window.parent !== window) {
+          trustedParentOrigins.forEach((origin) => {
+            window.parent.postMessage(message, origin);
+          });
+        }
+      };
+
+      window.addEventListener('mousemove', (event) => {
+        postToTrustedParent({
+          clientX: event.clientX,
+          clientY: event.clientY,
+          type: 'mousemove',
+        });
+      });
+      window.addEventListener('mousedown', () => {
+        postToTrustedParent({ type: 'mousedown' });
+      });
+      window.addEventListener('mouseup', () => {
+        postToTrustedParent({ type: 'mouseup' });
+      });
+      window.addEventListener('keydown', (event) => {
+        postToTrustedParent({ type: 'keydown', key: event.key });
+      });
+      window.addEventListener('keyup', (event) => {
+        postToTrustedParent({ type: 'keyup', key: event.key });
+      });
+    });
+  </script>
+</head>
+
+<body>
+  <noscript>You need to enable JavaScript to run this app.</noscript>
+  <div class="font_preload" style="opacity: 0; position: absolute; pointer-events: none;">
+    <span style="font-family: 'MSSerif', Arial, sans-serif;">abcdefghijklmnopqrstuvwxzy</span>
+    <span style="font-family: 'Millennium', Arial, sans-serif;">abcdefghijklmnopqrstuvwxzy</span>
+    <span style="font-family: 'MillenniumBold', Arial, sans-serif;">abcdefghijklmnopqrstuvwxzy</span>
+    <span style="font-family: 'Terminal', Arial, sans-serif;">abcdefghijklmnopqrstuvwxzy</span>
+  </div>
+  <div id="root"></div>
+  <script type="module" src="/src/index.tsx"></script>
+</body>
+
+</html>

@@ -5,6 +5,7 @@ import ghIcon from '../../assets/pictures/contact-gh.png';
 import inIcon from '../../assets/pictures/contact-in.png';
 import ResumeDownload from './ResumeDownload';
 import emailjs from '@emailjs/browser';
+import { usePortfolioContent } from '../../content/PortfolioContent';
 
 export interface ContactProps {}
 
@@ -23,7 +24,7 @@ interface SocialBoxProps {
 
 const SocialBox: React.FC<SocialBoxProps> = ({ link, icon }) => {
     return (
-        <a rel="noreferrer" target="_blank" href={link}>
+        <a rel="noopener noreferrer" target="_blank" href={link}>
             <div className="big-button-container" style={styles.social}>
                 <img src={icon} alt="" style={styles.socialImage} />
             </div>
@@ -32,7 +33,7 @@ const SocialBox: React.FC<SocialBoxProps> = ({ link, icon }) => {
 };
 
 const Contact: React.FC<ContactProps> = (props) => {
-    const [company, setCompany] = useState('');
+    const { data } = usePortfolioContent();
     const [email, setEmail] = useState('');
     const [name, setName] = useState('');
     const [message, setMessage] = useState('');
@@ -50,74 +51,50 @@ const Contact: React.FC<ContactProps> = (props) => {
     }, [email, name, message]);
 
     const handleSubmit = useCallback(async () => {
-        const params = {
-            Destination: {
-                ToAddresses: ['u7amaaslam@gmail.com'],
-            },
-            Message: {
-                Body: {
-                    Html: {
-                        Data: `From: <h6>${name}</h6><br /><p>${'Company :'}${company}</p><br/><p>${message}</p>`,
-                    },
-                },
-                Subject: {
-                    Data: 'From Portfolio',
-                },
-            },
-            Source: `${name} <${email}>`,
-            ReplyToAddresses: [email],
-        };
-
         if (isFormValid) {
+            const serviceId = import.meta.env.REACT_APP_SERVICE_ID;
+            const templateId = import.meta.env.REACT_APP_TEMPLATE_ID;
+            const publicKey = import.meta.env.REACT_APP_PUBLIC_KEY;
+
+            if (!serviceId || !templateId || !publicKey) {
+                setFormMessage('The contact form is not configured.');
+                setFormMessageColor(colors.red);
+                return;
+            }
+
             setIsLoading(true);
             try {
-                emailjs
-                    .send(
-                        `${process.env.REACT_APP_SERVICE_ID}`,
-                        `${process.env.REACT_APP_TEMPLATE_ID}`,
-                        {
-                            to_name: 'Usama Aslam',
-                            from_name: name,
-                            message: message,
-                            to_email: email,
-                        },
-                        process.env.REACT_APP_PUBLIC_KEY
-                    )
-                    .then(
-                        (result) => {
-                            console.log(result.text);
-                            setFormMessage(
-                                `Message successfully sent. Thank you ${name}!`
-                            );
-                            setCompany('');
-                            setEmail('');
-                            setName('');
-                            setMessage('');
-                            setFormMessageColor(colors.blue);
-                            setIsLoading(false);
-                        },
-                        (error) => {
-                            console.log(error.text);
-                            setFormMessage(
-                                'There was an error sending your message. Please try again.'
-                            );
-                            setFormMessageColor(colors.red);
-                            setIsLoading(false);
-                        }
-                    );
-            } catch (error) {
-                console.error('Error sending email:', error);
+                await emailjs.send(
+                    serviceId,
+                    templateId,
+                    {
+                        to_name: data.profile.name,
+                        from_name: name,
+                        message,
+                        to_email: email,
+                    },
+                    publicKey
+                );
                 setFormMessage(
-                    'An error occurred while sending your message. Please try again later.'
+                    `Message successfully sent. Thank you ${name}!`
+                );
+                setEmail('');
+                setName('');
+                setMessage('');
+                setFormMessageColor(colors.blue);
+            } catch {
+                setFormMessage(
+                    'There was an error sending your message. Please try again.'
                 );
                 setFormMessageColor(colors.red);
+            } finally {
                 setIsLoading(false);
             }
         } else {
             setFormMessage('Form unable to validate, please try again.');
             setFormMessageColor('red');
         }
-    }, [company, email, name, message, isFormValid]);
+    }, [email, name, message, isFormValid, data.profile.name]);
 
     useEffect(() => {
         if (formMessage.length > 0) {
@@ -133,16 +110,22 @@ const Contact: React.FC<ContactProps> = (props) => {
             <div style={styles.header}>
                 <h1>Contact</h1>
                 <div style={styles.socials}>
-                    <SocialBox
-                        icon={ghIcon}
-                        link={'https://github.com/U7ama'}
-                    />
-                    <SocialBox
-                        icon={inIcon}
-                        link={
-                            'https://www.linkedin.com/in/usama-aslam-638584194'
-                        }
-                    />
+                    {data.contacts.find((contact) => contact.id === 'github') && (
+                        <SocialBox
+                            icon={ghIcon}
+                            link={data.contacts.find(
+                                (contact) => contact.id === 'github'
+                            )!.url}
+                        />
+                    )}
+                    {data.contacts.find((contact) => contact.id === 'linkedin') && (
+                        <SocialBox
+                            icon={inIcon}
+                            link={data.contacts.find(
+                                (contact) => contact.id === 'linkedin'
+                            )!.url}
+                        />
+                    )}
                     {/* <SocialBox
                         icon={twitterIcon}
                         link={'https://twitter.com/UsamaAslam'}
@@ -151,18 +134,37 @@ const Contact: React.FC<ContactProps> = (props) => {
             </div>
             <div className="text-block">
                 <p>
-                    I am currently employed, however if you have any
-                    opportunities, feel free to reach out - I would love to
-                    chat! You can reach me via my personal email, or fill out
-                    the form below!
+                    If you have a project, opportunity, or question, feel free
+                    to reach out through any of the links below or use the
+                    contact form.
                 </p>
                 <br />
-                <p>
-                    <b>Email: </b>
-                    <a href="mailto:u7amaaslam@gmail.com">
-                        u7amaaslam@gmail.com
-                    </a>
-                </p>
+                <div style={styles.contactLinks}>
+                    {data.contacts.map((contact) => (
+                        <p key={contact.id}>
+                            <b>{contact.label}: </b>
+                            <a
+                                href={contact.url}
+                                target={
+                                    contact.url.startsWith('http')
+                                        ? '_blank'
+                                        : undefined
+                                }
+                                rel={
+                                    contact.url.startsWith('http')
+                                        ? 'noopener noreferrer'
+                                        : undefined
+                                }
+                            >
+                                {contact.id === 'email'
+                                    ? contact.url.replace('mailto:', '')
+                                    : contact.id === 'phone'
+                                      ? contact.url.replace('tel:', '')
+                                      : contact.label}
+                            </a>
+                        </p>
+                    ))}
+                </div>
 
                 <div style={styles.form}>
                     <label>
@@ -195,19 +197,6 @@ const Contact: React.FC<ContactProps> = (props) => {
                         value={email}
                         onChange={(e) => setEmail(e.target.value)}
                     />
-                    {/* <label>
-                        <p>
-                            <b>Company (optional):</b>
-                        </p>
-                    </label>
-                    <input
-                        style={styles.formItem}
-                        type="company"
-                        name="company"
-                        placeholder="Company"
-                        value={company}
-                        onChange={(e) => setCompany(e.target.value)}
-                    /> */}
                     <label>
                         <p>
                             {!message && <span style={styles.star}>*</span>}
@@ -319,6 +308,10 @@ const styles: StyleSheetCSS = {
         justifyContent: 'center',
         alignItems: 'center',
         marginLeft: 8,
+    },
+    contactLinks: {
+        flexDirection: 'column',
+        gap: 8,
     },
 };
 

@@ -1,16 +1,19 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from '../general';
 // import forHire from '../../assets/pictures/forHireGif.gif';
-import { useLocation, useNavigate } from 'react-router';
+import { useLocation, useNavigate } from 'react-router-dom';
+import { usePortfolioContent } from '../../content/PortfolioContent';
 
 export interface VerticalNavbarProps { }
 
 const VerticalNavbar: React.FC<VerticalNavbarProps> = (props) => {
     const location = useLocation();
+    const { data } = usePortfolioContent();
     const [projectsExpanded, setProjectsExpanded] = useState(false);
     const [isHome, setIsHome] = useState(false);
 
     const navigate = useNavigate();
+    const nameParts = data.profile.name.split(/\s+/);
     const goToContact = () => {
         navigate('/contact');
     };
@@ -32,9 +35,11 @@ const VerticalNavbar: React.FC<VerticalNavbarProps> = (props) => {
     return !isHome ? (
         <div style={styles.navbar}>
             <div style={styles.header}>
-                <h1 style={styles.headerText}>Usama</h1>
-                <h1 style={styles.headerText}>Aslam</h1>
-                <h3 style={styles.headerShowcase}>Showcase '23</h3>
+                <h1 style={styles.headerText}>{nameParts[0]}</h1>
+                <h1 style={styles.headerText}>
+                    {nameParts.slice(1).join(' ')}
+                </h1>
+                <h3 style={styles.headerShowcase}>Portfolio</h3>
             </div>
             <div style={styles.links}>
                 <Link containerStyle={styles.link} to="" text="HOME" />

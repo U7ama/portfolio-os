@@ -1,8 +1,21 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useRef } from 'react';
 
-import { DosPlayer as Instance, DosPlayerFactoryType } from 'js-dos';
+interface DosInstance {
+    stop: () => void;
+}
 
-declare const Dos: DosPlayerFactoryType;
+interface DosOptions {
+    url: string;
+    pathPrefix: string;
+    setNoCloud: boolean;
+}
+
+type DosPlayerFactory = (
+    root: HTMLDivElement,
+    options: DosOptions
+) => DosInstance;
+
+declare const Dos: DosPlayerFactory;
 
 interface PlayerProps {
     width: number;
@@ -13,33 +26,22 @@ interface PlayerProps {
 export default function DosPlayer(props: PlayerProps) {
     const rootRef = useRef<HTMLDivElement>(null);
 
-    const [dos, setDos] = useState<Instance | null>(null);
-
     useEffect(() => {
-        if (rootRef === null || rootRef.current === null) {
+        if (rootRef.current === null) {
             return;
         }
 
-        const root = rootRef.current as HTMLDivElement;
-        const instance = Dos(root);
-
-        setDos(instance);
-        const elements = rootRef.current.getElementsByClassName('flex-grow-0');
-
-        while (elements.length > 0) {
-            elements[0].remove();
-        }
+        const instance = Dos(rootRef.current, {
+            url: props.bundleUrl,
+            pathPrefix: `${import.meta.env.BASE_URL}js-dos/emulators/`,
+            setNoCloud: true,
+        });
 
         return () => {
             instance.stop();
         };
-    }, [rootRef]);
+    }, [props.bundleUrl]);
 
-    useEffect(() => {
-        if (dos !== null) {
-            dos.run(props.bundleUrl);
-        }
-    }, [dos, props.bundleUrl]);
     return (
         <div
             ref={rootRef}

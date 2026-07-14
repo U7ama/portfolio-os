@@ -2,12 +2,14 @@ import React from 'react';
 import { Link } from '../general';
 
 // import forhire from '../../assets/pictures/forHireGif.gif';
-import { useNavigate } from 'react-router';
+import { useNavigate } from 'react-router-dom';
+import { usePortfolioContent } from '../../content/PortfolioContent';
 
 export interface HomeProps { }
 
 const Home: React.FC<HomeProps> = (props) => {
     const navigate = useNavigate();
+    const { data } = usePortfolioContent();
 
     const goToContact = () => {
         navigate('/contact');
@@ -16,8 +18,8 @@ const Home: React.FC<HomeProps> = (props) => {
     return (
         <div style={styles.page}>
             <div style={styles.header}>
-                <h1 style={styles.name}>Usama Aslam</h1>
-                <h2>Full Stack Developer</h2>
+                <h1 style={styles.name}>{data.profile.name}</h1>
+                <h2>{data.profile.headline}</h2>
             </div>
             <div style={styles.buttons}>
                 <Link containerStyle={styles.link} to="about" text="ABOUT" />

@@ -1,29 +1,12 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
-import { blogData } from '../../assets/blogs/blogs';
+import { usePortfolioContent } from '../../content/PortfolioContent';
 
-export interface BlogProps { }
+export interface BlogProps {}
 
-interface BlogPost {
-    title: string;
-    content: string;
-    date: string;
-    author: string;
-    image: string;
-}
-
-const Blog: React.FC<BlogProps> = (props) => {
-    const [selectedPost, setSelectedPost] = useState<number | null>(null);
-
-    const handleClick = (index: number) => {
-        if (selectedPost === index) {
-            // If the post is currently selected, deselect it
-            setSelectedPost(null);
-        } else {
-            // If the post is not currently selected, select it
-            setSelectedPost(index);
-        }
-    };
+const Blog: React.FC<BlogProps> = () => {
+    const { data } = usePortfolioContent();
+    const email = data.contacts.find((contact) => contact.id === 'email');
 
     return (
         <div className="site-page-content">
@@ -31,49 +14,42 @@ const Blog: React.FC<BlogProps> = (props) => {
             <br />
             <div className="text-block">
                 <p>
-                    Welcome to my articles! Here you will find a collection of my thoughts, experiences and reflections.
+                    Thoughts, practical walkthroughs, and reflections from my
+                    software development work.
                 </p>
-                <br />
             </div>
 
-            {blogData.map((post: BlogPost, index: number) => (
-                <div key={index} style={styles.postCard}>
-                    <h3>{post.title}</h3>
-                    <h4>By {post.author} on {post.date}</h4>
-                    {/* <div style={styles.verticalImage}>
-                        <img src={post.image} style={styles.image} alt="" />
-                        <p>
-                            <sub>
-                                <b>Figure {index+1}:</b> Image for blog post titled "{post.title}"
-                            </sub>
-                        </p>
-                    </div> */}
-                    <p style={selectedPost === index ? styles.fullContent : styles.truncatedContent}>
-                        {selectedPost === index ? (
-                            post.content.split('\n').map((para, i) => <p key={i}>{para}</p>)
-                        ) : (
-                            post.content.split('\n')[0]
-                        )}
-                    </p>
-                    <button style={styles.readMoreButton} onClick={() => handleClick(index)}>
-                        {selectedPost === index ? "Read Less" : "Read More"}
-                    </button>
-                </div>
+            {data.articles.map((article) => (
+                <article key={article.id} style={styles.postCard}>
+                    <h3>{article.title}</h3>
+                    <h4>
+                        <time dateTime={article.date}>{article.date}</time>
+                    </h4>
+                    <p style={styles.summary}>{article.summary}</p>
+                    {article.links.map((link) => (
+                        <a
+                            href={link.url}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            key={link.url}
+                        >
+                            {link.label}
+                        </a>
+                    ))}
+                </article>
             ))}
 
             <div className="text-block">
                 <p>
-                    Thanks for reading my article! I hope that you enjoyed it.
-                </p>
-                <br />
-                <p>
-                    If you have any questions or comments I would love to hear
-                    them. You can reach me through the{' '}
-                    <Link to="/contact">contact page</Link> or shoot me an email
-                    at{' '}
-                    <a href="mailto:u7amaaslam@gmail.com">
-                        u7amaaslam@gmail.com
-                    </a>
+                    Questions or comments are always welcome. Reach me through
+                    the <Link to="/contact">contact page</Link>
+                    {email ? (
+                        <>
+                            {' '}or email <a href={email.url}>{email.url.replace('mailto:', '')}</a>.
+                        </>
+                    ) : (
+                        '.'
+                    )}
                 </p>
             </div>
         </div>
@@ -81,50 +57,19 @@ const Blog: React.FC<BlogProps> = (props) => {
 };
 
 const styles: StyleSheetCSS = {
-    contentHeader: {
-        marginBottom: 16,
-        fontSize: 48,
-    },
-    image: {
-        height: 'auto',
-        width: '100%',
-    },
-    verticalImage: {
-        alignSelf: 'center',
-        marginLeft: 32,
-        marginTop: '40px',
-        alignItems: 'center',
-        textAlign: 'center',
-        flexDirection: 'column',
-    },
     postCard: {
         backgroundColor: '#f8f8f8',
-        padding: '20px',
+        padding: 20,
         margin: '20px 0',
-        borderRadius: '10px',
-        boxShadow: '0px 0px 10px rgba(0, 0, 0, 0.1)',
+        border: '2px solid #808080',
+        boxShadow: '4px 4px 0 rgba(0, 0, 0, 0.15)',
         display: 'flex',
         flexDirection: 'column',
-        alignItems: 'center',
-        cursor: 'pointer',
+        alignItems: 'flex-start',
+        gap: 12,
     },
-    truncatedContent: {
+    summary: {
         width: '100%',
-        whiteSpace: 'nowrap',
-        overflow: 'hidden',
-        textOverflow: 'ellipsis',
-    },
-    fullContent: {
-        width: '100%',
-    },
-    readMoreButton: {
-        marginTop: '10px',
-        fontFamily: 'Times New Roman',
-        fontSize: '20px',
-        border: 'none',
-        backgroundColor: 'transparent',
-        color: 'blue',
-        cursor: 'pointer',
     },
 };
 

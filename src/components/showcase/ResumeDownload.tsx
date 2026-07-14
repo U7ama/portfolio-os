@@ -12,7 +12,11 @@ const ResumeDownload: React.FC<ResumeDownloadProps> = ({ altText }) => {
             <img style={styles.resumePrinter} alt="" src={printer} />
             <div style={styles.resumeContainerText}>
                 <h3>{altText ? altText : 'Looking for my resume?'}</h3>
-                <a rel="noreferrer" target="_blank" href="https://drive.google.com/file/d/1t8eBToZOUFJEzSiw1efqusGBSMzcAavS/view?usp=sharing">
+                <a
+                    rel="noopener noreferrer"
+                    target="_blank"
+                    href="https://u7ama.github.io/resume/"
+                >
                     <p>Click here to see it!</p>
                 </a>
             </div>

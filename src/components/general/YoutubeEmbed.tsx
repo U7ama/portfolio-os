@@ -1,32 +1,39 @@
-import PropTypes from "prop-types";
-import { useState, useEffect } from 'react';
+interface YoutubeEmbedProps {
+    embedId: string;
+}
 
-const YoutubeEmbed = ({ embedId }: any) => {
-    const [autoplay, setAutoplay] = useState("")
-    useEffect(() => {
-        if (embedId === "Nrv5DMTFNUw") {
-            setAutoplay("&autoplay=1")
-        };
-    });
+const YoutubeEmbed = ({ embedId }: YoutubeEmbedProps) => {
+    const autoplay = embedId === 'Nrv5DMTFNUw' ? '&autoplay=1' : '';
 
     return (
-        <div className="container">
+        <div style={styles.container}>
             <iframe
-                width="853"
-                className="responsive-iframe"
-                height="480"
+                style={styles.iframe}
                 src={`https://www.youtube.com/embed/${embedId}?rel=0${autoplay}`}
                 frameBorder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowFullScreen
-                title="Embedded youtube"
+                loading="lazy"
+                title="Project video"
+                referrerPolicy="strict-origin-when-cross-origin"
             />
         </div>
-    )
+    );
 };
 
-YoutubeEmbed.propTypes = {
-    embedId: PropTypes.string.isRequired
+const styles: StyleSheetCSS = {
+    container: {
+        position: 'relative',
+        overflow: 'hidden',
+        width: '100%',
+        paddingTop: '56.25%',
+    },
+    iframe: {
+        position: 'absolute',
+        inset: 0,
+        width: '100%',
+        height: '100%',
+    },
 };
 
 export default YoutubeEmbed;

@@ -24,3 +24,15 @@ yarn-debug.log*
 yarn-error.log*
 
 *.psd
+
+# Local test and tool artifacts
+output/
+.vite/
+
+# Hosting CLI state
+.vercel/
+.wrangler/
+
+# Local environment overrides
+.env.*
+!.env.example
