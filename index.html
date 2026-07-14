@@ -5,12 +5,82 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="theme-color" content="#000000" />
-  <meta name="description" content="" />
+  <meta name="description"
+    content="Explore Usama Aslam's interactive desktop-style portfolio, featuring full-stack, AI, SaaS, and cloud engineering work." />
+  <meta name="author" content="Usama Aslam" />
+  <meta name="robots" content="index, follow, max-image-preview:large" />
+  <link rel="canonical" href="https://os.usamaaslam.site/" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:site_name" content="Usama Aslam Portfolio OS" />
+  <meta property="og:title" content="Usama Aslam | Interactive Portfolio OS" />
+  <meta property="og:description"
+    content="Explore an interactive desktop-style portfolio featuring Usama Aslam's full-stack, AI, SaaS, and cloud engineering work." />
+  <meta property="og:url" content="https://os.usamaaslam.site/" />
+  <meta property="og:image" content="https://os.usamaaslam.site/favicon.ico" />
+  <meta property="og:image:type" content="image/jpeg" />
+  <meta property="og:image:width" content="512" />
+  <meta property="og:image:height" content="512" />
+  <meta property="og:image:alt" content="Illustrated portfolio window icon" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Usama Aslam | Interactive Portfolio OS" />
+  <meta name="twitter:description"
+    content="Explore an interactive desktop-style portfolio featuring full-stack, AI, SaaS, and cloud engineering work." />
+  <meta name="twitter:image" content="https://os.usamaaslam.site/favicon.ico" />
+  <meta name="twitter:image:alt" content="Illustrated portfolio window icon" />
+
   <base target="_parent">
   <link rel="stylesheet" href="https://use.typekit.net/llo2eru.css" />
-  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="/favicon.ico" type="image/jpeg" sizes="512x512">
   <link rel="manifest" href="/manifest.json" />
-  <title>Usama Aslam - OS</title>
+  <title>Usama Aslam | Interactive Portfolio OS</title>
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Person",
+          "@id": "https://os.usamaaslam.site/#person",
+          "name": "Usama Aslam",
+          "url": "https://usamaaslam.site/",
+          "image": "https://u7ama.github.io/resume/Usama%20DP.jpeg",
+          "jobTitle": "Full Stack Developer",
+          "sameAs": [
+            "https://github.com/U7ama",
+            "https://www.linkedin.com/in/usama-aslam-638584194/",
+            "https://u7ama.github.io/resume/"
+          ]
+        },
+        {
+          "@type": "WebSite",
+          "@id": "https://os.usamaaslam.site/#website",
+          "url": "https://os.usamaaslam.site/",
+          "name": "Usama Aslam Portfolio OS",
+          "description": "An interactive desktop-style portfolio for Usama Aslam's full-stack, AI, SaaS, and cloud engineering work.",
+          "inLanguage": "en",
+          "author": {
+            "@id": "https://os.usamaaslam.site/#person"
+          }
+        },
+        {
+          "@type": "CreativeWork",
+          "@id": "https://os.usamaaslam.site/#portfolio-os",
+          "name": "Interactive Portfolio OS",
+          "url": "https://os.usamaaslam.site/",
+          "description": "A browser-based desktop interface for exploring Usama Aslam's profile, experience, projects, articles, and contact details.",
+          "inLanguage": "en",
+          "creator": {
+            "@id": "https://os.usamaaslam.site/#person"
+          },
+          "isPartOf": {
+            "@id": "https://os.usamaaslam.site/#website"
+          }
+        }
+      ]
+    }
+  </script>
   <script>
     window.addEventListener('load', () => {
       const trustedParentOrigins = new Set([
@@ -49,14 +119,39 @@
 </head>
 
 <body>
-  <noscript>You need to enable JavaScript to run this app.</noscript>
   <div class="font_preload" style="opacity: 0; position: absolute; pointer-events: none;">
     <span style="font-family: 'MSSerif', Arial, sans-serif;">abcdefghijklmnopqrstuvwxzy</span>
     <span style="font-family: 'Millennium', Arial, sans-serif;">abcdefghijklmnopqrstuvwxzy</span>
     <span style="font-family: 'MillenniumBold', Arial, sans-serif;">abcdefghijklmnopqrstuvwxzy</span>
     <span style="font-family: 'Terminal', Arial, sans-serif;">abcdefghijklmnopqrstuvwxzy</span>
   </div>
-  <div id="root"></div>
+  <div id="root">
+    <main
+      style="box-sizing: border-box; min-height: 100vh; width: 100%; padding: 3rem; background: #fff url('/wallpaper.gif') center / cover no-repeat; color: #111; font-family: Arial, sans-serif; flex-direction: column;">
+      <h1>Usama Aslam — Interactive Portfolio OS</h1>
+      <p>
+        Explore full-stack, AI, SaaS, and cloud engineering experience through
+        a desktop-inspired portfolio. Open My Portfolio to browse the profile,
+        experience, projects, articles, and contact information.
+      </p>
+      <nav aria-label="Portfolio sections">
+        <a href="/about">About</a>
+        <a href="/experience">Experience</a>
+        <a href="/projects">Projects</a>
+        <a href="/blogs">Articles</a>
+        <a href="/contact">Contact</a>
+        <a href="https://usamaaslam.site/">Main portfolio</a>
+        <a href="https://3d.usamaaslam.site/">3D portfolio</a>
+        <a href="https://u7ama.github.io/resume/">Résumé</a>
+      </nav>
+      <noscript>
+        <p>
+          JavaScript is required for the interactive desktop. The main
+          portfolio and résumé remain available through the links above.
+        </p>
+      </noscript>
+    </main>
+  </div>
   <script type="module" src="/src/index.tsx"></script>
 </body>
 

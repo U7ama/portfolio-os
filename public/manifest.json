@@ -1,14 +1,17 @@
 {
-    "short_name": "Usama Aslam",
-    "name": "Usama Aslam Portfolio",
+    "short_name": "Portfolio OS",
+    "name": "Usama Aslam Portfolio OS",
     "icons": [
         {
-            "src": "favicon1.ico",
-            "sizes": "64x64 32x32 24x24 16x16",
-            "type": "image/x-icon"
+            "src": "/favicon.ico",
+            "sizes": "512x512",
+            "type": "image/jpeg",
+            "purpose": "any"
         }
     ],
-    "start_url": ".",
+    "id": "/",
+    "start_url": "/",
+    "scope": "/",
     "display": "standalone",
     "theme_color": "#000000",
     "background_color": "#ffffff"
