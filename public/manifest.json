@@ -3,7 +3,7 @@
     "name": "Usama Aslam Portfolio OS",
     "icons": [
         {
-            "src": "/favicon.ico",
+            "src": "/portfolio-card.jpg",
             "sizes": "512x512",
             "type": "image/jpeg",
             "purpose": "any"
