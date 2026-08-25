@@ -495,115 +495,866 @@ export const parsePortfolioMarkdown = (markdown: string): PortfolioDataV1 => {
 };
 
 export const FALLBACK_PORTFOLIO: PortfolioDataV1 = {
-    schemaVersion: PORTFOLIO_SCHEMA_VERSION,
-    profile: {
-        name: 'Usama Aslam',
-        headline: 'Full Stack Developer | AI & SaaS',
-        summary: [
-            'Full stack engineer building SaaS products, dashboards, AI features, APIs, and cloud systems.',
+    "schemaVersion": 1,
+    "profile": {
+        "name": "Usama Aslam",
+        "headline": "Full-Stack Engineer | Applied AI & Cloud",
+        "summary": [
+            "Full-stack engineer with 4+ years delivering production SaaS platforms, AI-enabled systems, scalable APIs, and real-time AV/IoT solutions across travel, healthcare, hospitality, and eCommerce.",
+            "Combines strong full-stack fundamentals (React, Next.js, TypeScript, Node.js, Python/FastAPI) with Applied AI architectures, focusing on system reliability, type safety, evaluation-led testing, and automated cloud deployments.",
+            "Focuses on end-to-end software ownership—from early architecture and data modeling to production release—while exploring interactive 3D graphics, desktop web simulations, and creative UI engineering."
         ],
-        disciplines: ['Full Stack', 'React', 'Next.js', 'Node.js', 'AI & SaaS'],
+        "disciplines": [
+            "Applied AI",
+            "React & Next.js",
+            "Node.js & Python",
+            "Cloud & DevOps",
+            "RAG & AI Agents",
+            "IoT & Real-time",
+            "3D & Creative Web"
+        ]
     },
-    contacts: [
-        { id: 'email', label: 'Email', url: 'mailto:u7amaaslam@gmail.com' },
-        { id: 'phone', label: 'Phone', url: 'tel:+923016441046' },
-        { id: 'github', label: 'GitHub', url: 'https://github.com/U7ama' },
+    "contacts": [
         {
-            id: 'linkedin',
-            label: 'LinkedIn',
-            url: 'https://www.linkedin.com/in/usama-aslam-638584194/',
+            "id": "email",
+            "label": "Email",
+            "url": "mailto:u7amaaslam@gmail.com"
         },
-        { id: 'resume', label: 'Resume', url: 'https://u7ama.github.io/resume/' },
+        {
+            "id": "website",
+            "label": "Main Portfolio",
+            "url": "https://usamaaslam.site/"
+        },
+        {
+            "id": "github",
+            "label": "GitHub",
+            "url": "https://github.com/U7ama"
+        },
+        {
+            "id": "linkedin",
+            "label": "LinkedIn",
+            "url": "https://www.linkedin.com/in/usama-aslam-638584194/"
+        },
+        {
+            "id": "instagram",
+            "label": "Instagram",
+            "url": "https://www.instagram.com/u7ama.aslam/"
+        },
+        {
+            "id": "facebook",
+            "label": "Facebook",
+            "url": "https://www.facebook.com/u7ama.jatt"
+        },
+        {
+            "id": "phone",
+            "label": "Phone",
+            "url": "tel:+923016441046"
+        },
+        {
+            "id": "upwork",
+            "label": "Upwork",
+            "url": "https://www.upwork.com/freelancers/usamaa241?mp_source=share"
+        },
+        {
+            "id": "resume",
+            "label": "Resume",
+            "url": "https://u7ama.github.io/resume/"
+        }
     ],
-    experience: [
+    "experience": [
         {
-            id: 'freelance-upwork',
-            role: 'Full Stack Engineer',
-            organization: 'Freelance / Upwork',
-            location: 'Remote',
-            period: 'Jul 2024 - Present',
-            website: '',
-            summary: 'Build AI SaaS platforms, dashboards, internal tools, API products, and automations for clients.',
-            details: [],
+            "id": "alignav",
+            "role": "Full Stack Engineer",
+            "organization": "AlignAV",
+            "location": "Remote",
+            "period": "Aug 2024 - Present",
+            "website": "https://www.alignav.com/",
+            "summary": "Full-stack engineering and real-time AV/IoT monitoring platform development with Azure IoT, Next.js, and AI guidance systems.",
+            "details": [
+                "Led development of asset management and real-time AV/IoT monitoring dashboards for 5,000+ connected devices, coordinating telemetry across edge services and cloud infrastructure.",
+                "Implemented tenant-scoped AI assistance over permitted room/device data and knowledge articles for cited troubleshooting guidance.",
+                "Implemented AI-assisted import mapping with human review safeguards before database commit.",
+                "Managed deployment pipelines with Azure DevOps and Docker, ensuring reliable device telemetry and seamless client onboarding."
+            ]
         },
+        {
+            "id": "olumi-tech",
+            "role": "Full Stack Developer",
+            "organization": "Olumi Tech",
+            "location": "Remote",
+            "period": "Nov 2023 - Feb 2025",
+            "website": "",
+            "summary": "Worked remotely on full stack web applications from initial implementation through integrations and deployment support.",
+            "details": [
+                "Used React, Node.js, Python/FastAPI, AWS, GCP, Firebase, SQL, Stripe, Shopify, OAuth, Mailgun, OpenAI, and Gemini.",
+                "Integrated multimodal Gemini vision for recipe discovery in Cool Potato, plus OpenAI-assisted journaling in Diary Synergy.",
+                "Contributed across healthcare, hospitality, eCommerce, and travel client products including Sunridge Medical, Lisbon Hop On, Beetkom, MedLab QCS, and Levante Cuisine."
+            ]
+        },
+        {
+            "id": "xecutors",
+            "role": "Full Stack Developer",
+            "organization": "Xecutors",
+            "location": "Islamabad",
+            "period": "Aug 2022 - Oct 2023",
+            "website": "https://www.xecutors.com/",
+            "summary": "Created backend services and frontend integrations for travel, payments, documents, communication, and administrative workflows.",
+            "details": [
+                "Coordinated Agile work through daily stand-ups and JIRA while collaborating across reusable frontend and backend deliverables.",
+                "Developed Node.js serverless microservices, routed and secured them through Kong API Gateway, and automated cloud deployment with Terraform across GCP and AWS.",
+                "Built micro frontend packages and web components with Next.js, TypeScript, Stencil.js, and Bit so features could be developed and deployed independently.",
+                "Integrated PostgreSQL, GraphQL and Hasura, Stripe and Braintree, SendGrid, OAuth, WhatsApp Business API, Amadeus, DocuSign, and Adobe PDF generation."
+            ]
+        },
+        {
+            "id": "stash-technologies",
+            "role": "MERN Stack Developer",
+            "organization": "Stash Technologies",
+            "location": "Remote",
+            "period": "Mar 2022 - Aug 2022",
+            "website": "https://stashtechnologies.com/",
+            "summary": "Built Roomph.pk hotel booking flows with React.js, Node.js, REST APIs, and MongoDB.",
+            "details": [
+                "Designed REST endpoints and user-facing booking features with an emphasis on maintainability and reliable data handling.",
+                "Refactored frontend rendering and API usage to reduce redundant work and provide a smoother booking experience."
+            ]
+        }
     ],
-    skills: [
+    "skills": [
         {
-            id: 'full-stack',
-            label: 'Full stack',
-            items: ['React', 'Next.js', 'Node.js', 'TypeScript', 'Python', 'Cloud'],
+            "id": "frontend",
+            "label": "Frontend and Testing",
+            "items": [
+                "React.js",
+                "Next.js",
+                "TypeScript",
+                "JavaScript",
+                "Tailwind CSS",
+                "HTML",
+                "CSS",
+                "Playwright",
+                "Dashboards",
+                "Three.js",
+                "WebGL",
+                "Framer Motion"
+            ]
         },
+        {
+            "id": "backend",
+            "label": "Backend and APIs",
+            "items": [
+                "Node.js",
+                "Python",
+                "FastAPI",
+                "REST",
+                "GraphQL",
+                "WebSockets",
+                "OAuth",
+                "Queues (Redis)",
+                "Cron jobs",
+                "Third-party integrations"
+            ]
+        },
+        {
+            "id": "applied-ai",
+            "label": "Applied AI",
+            "items": [
+                "pgvector RAG with FTS and RRF",
+                "Tenant-scoped AI assistants",
+                "Cited AI guidance",
+                "Bounded tenant-bound tool workflows and agents",
+                "OpenAI and Gemini integrations",
+                "Multimodal Gemini image analysis",
+                "Structured outputs and runtime validation",
+                "Prompt-injection defenses, approvals, idempotency, and audit trails",
+                "Streaming AI APIs and durable SSE replay",
+                "Signed n8n automation and read-only MCP integration",
+                "AI evaluations, regression testing, and observability"
+            ]
+        },
+        {
+            "id": "ai-cloud",
+            "label": "Cloud and Delivery",
+            "items": [
+                "AWS",
+                "GCP",
+                "Azure IoT Hub and Edge",
+                "Docker",
+                "Kubernetes",
+                "Terraform",
+                "CI/CD (GitHub Actions, Azure DevOps)",
+                "Observability",
+                "Vercel",
+                "Cloudflare"
+            ]
+        },
+        {
+            "id": "data-tools",
+            "label": "Data and Product Integrations",
+            "items": [
+                "PostgreSQL",
+                "MongoDB",
+                "MySQL",
+                "Firebase",
+                "Cosmos DB",
+                "Stripe",
+                "Braintree",
+                "Shopify",
+                "SendGrid",
+                "Amadeus",
+                "DocuSign"
+            ]
+        }
     ],
-    education: [
+    "education": [
         {
-            id: 'bscs',
-            qualification: 'BS Computer Science',
-            institution: 'PMAS Arid Agriculture University',
-            location: 'Rawalpindi',
-            period: '2018 - 2022',
-            details: [],
-            links: [],
-        },
-    ],
-    projects: [
-        {
-            id: 'alignav-monitoring',
-            title: 'AlignAV Monitoring',
-            category: 'AI / SaaS / IoT',
-            featuredOrder: 1,
-            summary: 'Asset management and real-time AV/IoT monitoring platform.',
-            details: [],
-            technologies: ['Next.js', 'Node.js', 'Azure IoT', 'Docker'],
-            links: [{ label: 'Website', url: 'https://www.alignav.com/' }],
-            videos: [],
-        },
-        {
-            id: 'copilot-travel',
-            title: 'Copilot Travel',
-            category: 'Travel / Web Component',
-            featuredOrder: 2,
-            summary: 'A configurable flight-search and booking web component.',
-            details: [],
-            technologies: ['Next.js', 'TypeScript', 'GraphQL'],
-            links: [{ label: 'Copilot Travel', url: 'https://copilottravel.com/' }],
-            videos: [
+            "id": "bscs",
+            "qualification": "BSCS, CGPA 3.30",
+            "institution": "PMAS Arid Agriculture University",
+            "location": "Rawalpindi",
+            "period": "2018 - 2022",
+            "details": [
+                "Built a plant image-recognition web application for university research as the final-year Hemp Project."
+            ],
+            "links": [
                 {
-                    provider: 'youtube',
-                    id: 'Nrv5DMTFNUw',
-                    caption: 'Copilot Travel flight-booking demonstration',
-                },
-            ],
+                    "label": "ECOSF Hemp Value Chain Development",
+                    "url": "https://eco4science.org/Hemp-Value-Chain-Development"
+                }
+            ]
         },
         {
-            id: 'portfolio-suite',
-            title: 'Interactive Portfolio Suite',
-            category: 'Portfolio / Three.js',
-            featuredOrder: 3,
-            summary: 'A main portfolio, 3D room, desktop-style OS, and printable resume.',
-            details: [],
-            technologies: ['React', 'Three.js', 'TypeScript'],
-            links: [
-                { label: 'Main Portfolio', url: 'https://usamaaslam.site/' },
-                { label: '3D Portfolio', url: 'https://3d.usamaaslam.site/' },
-                { label: 'OS Portfolio', url: 'https://os.usamaaslam.site/' },
+            "id": "fsc-pre-engineering",
+            "qualification": "FSC Pre Engineering",
+            "institution": "Punjab College",
+            "location": "Gujranwala",
+            "period": "2016 - 2018",
+            "details": [
+                "Completed pre-engineering studies before beginning the BSCS program."
             ],
-            videos: [
-                {
-                    provider: 'youtube',
-                    id: 'DqgwT4pzTeM',
-                    caption: 'Blender scene and 3D portfolio demonstration',
-                },
-            ],
+            "links": []
         },
+        {
+            "id": "python-fundamentals",
+            "qualification": "Python Fundamentals Certification",
+            "institution": "DataCamp",
+            "location": "Online",
+            "period": "2020",
+            "details": [
+                "Completed foundational Python programming coursework and exercises."
+            ],
+            "links": []
+        }
     ],
-    uses: [],
-    articles: [],
-    sites: [
-        { id: 'main', label: 'Main Portfolio', url: 'https://usamaaslam.site/' },
-        { id: 'three-d', label: '3D Portfolio', url: 'https://3d.usamaaslam.site/' },
-        { id: 'os', label: 'OS Portfolio', url: 'https://os.usamaaslam.site/' },
-        { id: 'resume', label: 'Resume', url: 'https://u7ama.github.io/resume/' },
+    "projects": [
+        {
+            "id": "deviceops-ai-copilot",
+            "title": "DeviceOps AI Copilot",
+            "category": "Applied AI / SaaS / IoT",
+            "featuredOrder": null,
+            "summary": "A production-grade Applied AI and IoT copilot for device-operations teams, combining multi-tenant RAG, bounded agentic workflows, approval controls, n8n automation, and an Expo technician client.",
+            "details": [
+                "Built a TypeScript workspace with Next.js, PostgreSQL Row-Level Security, pgvector semantic retrieval, PostgreSQL full-text search, and reciprocal-rank fusion for cited troubleshooting guidance.",
+                "Implemented structured diagnoses with Zod validation, tenant-bound read-only tools, prompt-injection defenses, approval-gated incident proposals, idempotency, audit events, and durable SSE run timelines.",
+                "Added pg-boss workers and a transactional outbox, signed n8n incident routing with replay protection, and a read-only MCP adapter over authorized application services.",
+                "Created an Expo technician workflow for secure sign-in, room and device context, reconnectable run status, citations, uncertainty, and approval status.",
+                "Added a 40-case evaluation suite plus unit, API-smoke, contract, MCP, and load checks for retrieval quality, output validity, isolation, retries, and failure handling."
+            ],
+            "technologies": [
+                "Next.js",
+                "TypeScript",
+                "PostgreSQL",
+                "pgvector",
+                "Drizzle ORM",
+                "pg-boss",
+                "Zod",
+                "n8n",
+                "Expo",
+                "Playwright",
+                "Docker",
+                "MCP",
+                "SSE"
+            ],
+            "links": [
+                {
+                    "label": "Core Repository",
+                    "url": "https://github.com/U7ama/deviceops-ai-copilot"
+                },
+                {
+                    "label": "Mobile App",
+                    "url": "https://github.com/U7ama/deviceops-mobile"
+                },
+                {
+                    "label": "Automations",
+                    "url": "https://github.com/U7ama/deviceops-automations"
+                }
+            ],
+            "videos": []
+        },
+        {
+            "id": "alignav-monitoring",
+            "title": "AlignAV Monitoring",
+            "category": "AI / SaaS / IoT",
+            "featuredOrder": null,
+            "summary": "Asset management and real-time AV/IoT monitoring for 5,000+ connected devices, rooms, environments, and operational teams.",
+            "details": [
+                "Built an interactive multi-tenant Next.js dashboard backed by Cosmos DB and WebSockets for live status updates and room telemetry.",
+                "Developed edge services and a C# Windows monitoring client communicating with Azure IoT Hub.",
+                "Integrated tenant-scoped AI assistant providing cited troubleshooting steps and intelligent bulk data imports."
+            ],
+            "technologies": [
+                "Next.js",
+                "TypeScript",
+                "Node.js",
+                "Python",
+                "C#",
+                "Azure IoT",
+                "Cosmos DB",
+                "Docker",
+                "WebSockets"
+            ],
+            "links": [
+                {
+                    "label": "Website",
+                    "url": "https://www.alignav.com/"
+                }
+            ],
+            "videos": []
+        },
+        {
+            "id": "copilot-travel",
+            "title": "Copilot Travel",
+            "category": "Travel / Web Component",
+            "featuredOrder": 2,
+            "summary": "A versatile Travel Widget that serves as a comprehensive tool for flight search and customization. It is a plug-and-play web component designed for seamless integration with any website",
+            "details": [
+                "Built as a Next.js and TypeScript frontend packaged as a reusable web component with Stencil.js and Bit.",
+                "Used Apollo GraphQL subgraphs and serverless functions deployed across GCP, AWS, and Azure, with load balancing for performance and availability.",
+                "The architecture was designed as a plug-and-play component that could work independently of the host website technology."
+            ],
+            "technologies": [
+                "Next.js",
+                "TypeScript",
+                "Stencil.js",
+                "Bit",
+                "Apollo GraphQL",
+                "GCP",
+                "AWS",
+                "Azure"
+            ],
+            "links": [
+                {
+                    "label": "Copilot Travel",
+                    "url": "https://copilottravel.com/"
+                },
+                {
+                    "label": "Integrated Travel Component",
+                    "url": "https://www.integratedtravelcomponent.com/"
+                }
+            ],
+            "videos": [
+                {
+                    "provider": "youtube",
+                    "id": "Nrv5DMTFNUw",
+                    "caption": "Copilot Travel flight-booking demonstration"
+                }
+            ]
+        },
+        {
+            "id": "roomph",
+            "title": "Roomph.pk",
+            "category": "Hospitality / Booking",
+            "featuredOrder": 1,
+            "summary": "Roomph.pk is a Hotel Booking Company in Pakistan. Built using React.js and Node.js",
+            "details": [
+                "Web platform for discovering hotels, comparing amenities, checking real-time room availability, and completing bookings.",
+                "Features responsive property profiles, interactive photo galleries, and streamlined multi-step checkout."
+            ],
+            "technologies": [
+                "React",
+                "Node.js",
+                "MongoDB",
+                "REST APIs",
+                "Bootstrap"
+            ],
+            "links": [
+                {
+                    "label": "Website",
+                    "url": "https://roomph.pk/"
+                }
+            ],
+            "videos": [
+                {
+                    "provider": "youtube",
+                    "id": "mSMHyw9E0bM",
+                    "caption": "Roomph hotel-booking application demonstration"
+                }
+            ]
+        },
+        {
+            "id": "xecutors-platforms",
+            "title": "Xecutors",
+            "category": "Travel / Enterprise",
+            "featuredOrder": 3,
+            "summary": "Xecutors provides subscription-based digital solutions",
+            "details": [],
+            "technologies": [
+                "Next.js",
+                "Node.js",
+                "GraphQL",
+                "PostgreSQL",
+                "Cloud Functions"
+            ],
+            "links": [
+                {
+                    "label": "Website",
+                    "url": "https://www.xecutors.com/"
+                }
+            ],
+            "videos": []
+        },
+        {
+            "id": "portfolio-suite",
+            "title": "Interactive Portfolio Suite",
+            "category": "Portfolio / Three.js",
+            "featuredOrder": null,
+            "summary": "A connected set of main, 3D, desktop-style OS, and printable resume experiences presenting the same developer portfolio in different visual formats.",
+            "details": [
+                "The 3D experience uses Three.js and a Blender-authored environment, while its monitor securely embeds the standalone React OS portfolio.",
+                "The OS experience recreates a desktop interface while rendering portfolio pages natively and forwarding a small trusted input-event protocol to the 3D parent."
+            ],
+            "technologies": [
+                "Next.js",
+                "React",
+                "TypeScript",
+                "Three.js",
+                "WebGL",
+                "Blender",
+                "Webpack",
+                "Vite"
+            ],
+            "links": [
+                {
+                    "label": "Main Portfolio",
+                    "url": "https://usamaaslam.site/"
+                },
+                {
+                    "label": "3D Portfolio",
+                    "url": "https://3d.usamaaslam.site/"
+                },
+                {
+                    "label": "OS Portfolio",
+                    "url": "https://os.usamaaslam.site/"
+                },
+                {
+                    "label": "OS Repository",
+                    "url": "https://github.com/U7ama/portfolio-os"
+                }
+            ],
+            "videos": [
+                {
+                    "provider": "youtube",
+                    "id": "DqgwT4pzTeM",
+                    "caption": "Blender scene and 3D portfolio demonstration"
+                }
+            ]
+        },
+        {
+            "id": "cool-potato",
+            "title": "Cool Potato",
+            "category": "AI / SaaS",
+            "featuredOrder": null,
+            "summary": "An AI-powered recipe application that detects food items in images and suggests personalized recipes based on user preferences and dietary needs, including diabetic-friendly options.",
+            "details": [
+                "Integrated Gemini image understanding to identify ingredients from food images and combine them with dietary-aware recipe discovery.",
+                "A potato character presents recipes in an engaging format, while community features help users organize and participate in food festivals.",
+                "Features schema-validated ingredient extraction, automated quality checks, and dietary-aware recipe retrieval."
+            ],
+            "technologies": [
+                "Node.js",
+                "Gemini",
+                "MongoDB",
+                "Mongoose",
+                "Google Cloud Run",
+                "Docker"
+            ],
+            "links": [
+                {
+                    "label": "App Store",
+                    "url": "https://apps.apple.com/ca/app/coolpotato/id6677017071"
+                }
+            ],
+            "videos": []
+        },
+        {
+            "id": "sunridge-medical",
+            "title": "Sunridge Medical",
+            "category": "Healthcare / Web Application",
+            "featuredOrder": null,
+            "summary": "Built a medical-clinic operations dashboard for employees to manage patients, treatments, lab results, progress, communications, room assignments, appointments, and task status.",
+            "details": [
+                "Integrated Google Calendar scheduling, detailed reporting, suggested treatments and medicines, and a Shopify-connected dispensing workflow."
+            ],
+            "technologies": [
+                "MongoDB",
+                "Express.js",
+                "React",
+                "Node.js",
+                "Material UI",
+                "Socket.io",
+                "Google Calendar API",
+                "Shopify",
+                "DigitalOcean"
+            ],
+            "links": [
+                {
+                    "label": "Website",
+                    "url": "https://sunridgemedical.com/"
+                }
+            ],
+            "videos": []
+        },
+        {
+            "id": "medlab-qcs",
+            "title": "MedLab QCS",
+            "category": "Healthcare / SaaS",
+            "featuredOrder": null,
+            "summary": "A precision-management platform for quality assurance in medical laboratories.",
+            "details": [
+                "Enables administrators to manage staff, instrument maintenance, calibrations, reagents, device temperature logs, audits, software, inventory, and Google Workspace records."
+            ],
+            "technologies": [
+                "React",
+                "Google Sheets automation",
+                "Google Docs API",
+                "Google Forms",
+                "Serverless computing"
+            ],
+            "links": [
+                {
+                    "label": "Application",
+                    "url": "https://qcsmlab-555fa.web.app/"
+                }
+            ],
+            "videos": []
+        },
+        {
+            "id": "etravelo",
+            "title": "eTravelo",
+            "category": "Travel / Web Application",
+            "featuredOrder": null,
+            "summary": "Travel product work covering frontend, backend services, integrations, and operational workflows.",
+            "details": [],
+            "technologies": [
+                "Next.js",
+                "Node.js",
+                "GraphQL",
+                "Travel APIs"
+            ],
+            "links": [
+                {
+                    "label": "Website",
+                    "url": "https://www.etravelo.co.uk/"
+                }
+            ],
+            "videos": []
+        },
+        {
+            "id": "lisbon-hop-on",
+            "title": "Lisbon Hop On",
+            "category": "Travel / Web Application",
+            "featuredOrder": null,
+            "summary": "A travel application delivered during Olumi Tech work with full stack implementation and deployment support.",
+            "details": [],
+            "technologies": [
+                "React",
+                "Node.js",
+                "APIs",
+                "Cloud deployment"
+            ],
+            "links": [
+                {
+                    "label": "Website",
+                    "url": "https://lisbonhopon.vercel.app/"
+                }
+            ],
+            "videos": []
+        },
+        {
+            "id": "beetkom",
+            "title": "Beetkom",
+            "category": "Real Estate / Backend",
+            "featuredOrder": null,
+            "summary": "Developed the backend for a property-listing application with multilingual support for English, Arabic, and Turkish.",
+            "details": [
+                "Implemented application services and communication workflows for the real-estate platform."
+            ],
+            "technologies": [
+                "Node.js",
+                "Firebase",
+                "Twilio API",
+                "Sequelize",
+                "SQLite"
+            ],
+            "links": [
+                {
+                    "label": "Website",
+                    "url": "https://beetkom.vercel.app/"
+                }
+            ],
+            "videos": []
+        },
+        {
+            "id": "info-latch",
+            "title": "InfoLatch",
+            "category": "Agency / Website",
+            "featuredOrder": null,
+            "summary": "A responsive website presenting a software-development agency, its services, process, and client work.",
+            "details": [],
+            "technologies": [
+                "Next.js",
+                "Tailwind CSS"
+            ],
+            "links": [
+                {
+                    "label": "Website",
+                    "url": "https://infolatch.uk/"
+                }
+            ],
+            "videos": []
+        },
+        {
+            "id": "anchored-to-you",
+            "title": "Anchored To You",
+            "category": "AI / Computer Vision",
+            "featuredOrder": null,
+            "summary": "A computer-vision prototype for estimating nail size from images.",
+            "details": [
+                "Moved the backend approach from Node.js to Python, labeled nail-image data, and trained and fine-tuned a PyTorch model with AWS SageMaker.",
+                "Integrated the model into a FastAPI backend deployed on AWS EC2."
+            ],
+            "technologies": [
+                "Python",
+                "PyTorch",
+                "AWS SageMaker",
+                "FastAPI",
+                "AWS EC2",
+                "Computer vision"
+            ],
+            "links": [
+                {
+                    "label": "Project Website",
+                    "url": "https://www.anchoredtoyou.com"
+                }
+            ],
+            "videos": []
+        },
+        {
+            "id": "pixel-copy",
+            "title": "Pixel Copy",
+            "category": "Content / Web Application",
+            "featuredOrder": null,
+            "summary": "A copywriting-team website with writing samples and dynamically managed blog content.",
+            "details": [
+                "Used DatoCMS and GraphQL so editors could update content without code changes."
+            ],
+            "technologies": [
+                "React",
+                "DatoCMS",
+                "GraphQL"
+            ],
+            "links": [],
+            "videos": [
+                {
+                    "provider": "youtube",
+                    "id": "Tc7DLJVtETo",
+                    "caption": "Pixel Copy demonstration"
+                }
+            ]
+        },
+        {
+            "id": "diary-synergy",
+            "title": "Diary Synergy AI Diary Assistant",
+            "category": "AI / SaaS",
+            "featuredOrder": null,
+            "summary": "An AI-powered daily diary application that helps users write entries based on their mood.",
+            "details": [
+                "Includes a subscription community where users can discover, connect, and chat with like-minded people.",
+                "Includes user-controlled mood-based journal entries, privacy controls, and contextual AI writing assistance."
+            ],
+            "technologies": [
+                "Node.js",
+                "OpenAI API",
+                "Firebase",
+                "Cloud Firestore",
+                "Google App Engine"
+            ],
+            "links": [],
+            "videos": []
+        },
+        {
+            "id": "shopify-invoicing",
+            "title": "Shopify Invoicing App",
+            "category": "eCommerce / SaaS",
+            "featuredOrder": null,
+            "summary": "A Shopify-connected invoicing application delivered through freelance product and API integration work.",
+            "details": [
+                "Features automated order and invoice synchronization, idempotent data processing, and merchant approval workflows."
+            ],
+            "technologies": [
+                "Shopify",
+                "Node.js",
+                "APIs",
+                "SaaS"
+            ],
+            "links": [],
+            "videos": []
+        },
+        {
+            "id": "amici-friends",
+            "title": "Amici Friends App",
+            "category": "Social / Productivity",
+            "featuredOrder": null,
+            "summary": "A friend-organization application that brings contacts from multiple social platforms together and supports reminders for birthdays, chats, and meetings.",
+            "details": [],
+            "technologies": [
+                "Node.js",
+                "Firebase",
+                "Push notifications"
+            ],
+            "links": [],
+            "videos": []
+        },
+        {
+            "id": "kong-api-gateway",
+            "title": "Kong API Gateway Platform",
+            "category": "Cloud / API Management",
+            "featuredOrder": null,
+            "summary": "API-management infrastructure used to regulate traffic and secure serverless cloud functions.",
+            "details": [
+                "Deployed Kong Ingress on Google Kubernetes Engine with Anthos and published OpenAPI 3 specifications through the developer portal.",
+                "Added OAuth-based access control and Terraform-managed infrastructure for scalable, documented API delivery."
+            ],
+            "technologies": [
+                "Kong",
+                "GKE",
+                "Anthos",
+                "OpenAPI",
+                "OAuth",
+                "Terraform",
+                "Node.js"
+            ],
+            "links": [],
+            "videos": []
+        },
+        {
+            "id": "levante-cuisine",
+            "title": "Levante Cuisine",
+            "category": "Hospitality / Web Application",
+            "featuredOrder": null,
+            "summary": "A hospitality web project delivered during my Olumi Tech work. Its former public domain no longer represents this project.",
+            "details": [],
+            "technologies": [
+                "React",
+                "Node.js",
+                "Cloud deployment"
+            ],
+            "links": [],
+            "videos": []
+        }
     ],
+    "uses": [
+        {
+            "id": "design",
+            "label": "Design",
+            "items": [
+                "Blender for modelling and preparing 3D assets used in interactive web experiences."
+            ]
+        },
+        {
+            "id": "development",
+            "label": "Development",
+            "items": [
+                "Visual Studio Code with the Atom One Dark theme and Operator Mono for day-to-day development.",
+                "Brave as the primary browser for development and general use.",
+                "React for component-oriented frontend development.",
+                "Three.js for 3D effects, WebGL scenes, and image shaders.",
+                "Vanilla CSS with PostCSS for maintainable styling and newer CSS features.",
+                "Framer Motion for React animation and motion design."
+            ]
+        },
+        {
+            "id": "hardware",
+            "label": "Hardware",
+            "items": [
+                "Lenovo X1 Carbon laptop",
+                "Intel Core i5 vPro 8th Gen CPU",
+                "Intel UHD 640 graphics",
+                "Samsung 16GB DDR4 memory",
+                "Logitech G403 mouse"
+            ]
+        }
+    ],
+    "articles": [
+        {
+            "id": "nextjs-loading",
+            "title": "How To Handle Loading Between Page Changes in Next.js 14 App Router",
+            "date": "2024-04-27",
+            "summary": "Add a loading indicator to a Next.js App Router application using Zustand and route-change awareness.",
+            "links": [
+                {
+                    "label": "Read article",
+                    "url": "https://usamaaslam.site/articles/nextjs-loading/"
+                }
+            ]
+        },
+        {
+            "id": "cloud-functions",
+            "title": "Deploying Cloud Functions in Node.js using Apollo Studio on AWS, Azure, and GCP through Terraform",
+            "date": "2023-05-23",
+            "summary": "An introduction to deploying Node.js GraphQL cloud functions across AWS, Azure, and GCP with Terraform.",
+            "links": [
+                {
+                    "label": "Read article",
+                    "url": "https://usamaaslam.site/articles/cloud-functions/"
+                }
+            ]
+        },
+        {
+            "id": "cloudflare",
+            "title": "Uploading Images to Cloudflare R2 using Bash and Rclone",
+            "date": "2023-05-22",
+            "summary": "Use Rclone and a Bash workflow to upload and synchronize images with Cloudflare R2 storage.",
+            "links": [
+                {
+                    "label": "Read article",
+                    "url": "https://usamaaslam.site/articles/cloudflare/"
+                }
+            ]
+        }
+    ],
+    "sites": [
+        {
+            "id": "main",
+            "label": "Main Portfolio",
+            "url": "https://usamaaslam.site/"
+        },
+        {
+            "id": "three-d",
+            "label": "3D Portfolio",
+            "url": "https://3d.usamaaslam.site/"
+        },
+        {
+            "id": "os",
+            "label": "OS Portfolio",
+            "url": "https://os.usamaaslam.site/"
+        },
+        {
+            "id": "resume",
+            "label": "Resume",
+            "url": "https://u7ama.github.io/resume/"
+        }
+    ]
 };
 
 export type PortfolioContentSource = 'fallback' | 'cache' | 'network';
