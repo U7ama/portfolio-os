@@ -25,8 +25,11 @@ const PortfolioContentContext = createContext<PortfolioContentValue | undefined>
     undefined
 );
 
+const rawContentUrl = import.meta.env.VITE_PORTFOLIO_CONTENT_URL;
 const CONTENT_URL =
-    import.meta.env.VITE_PORTFOLIO_CONTENT_URL ?? PORTFOLIO_CONTENT_URL;
+    import.meta.env.PROD && rawContentUrl && /localhost|127\.0\.0\.1/i.test(rawContentUrl)
+        ? PORTFOLIO_CONTENT_URL
+        : (rawContentUrl ?? PORTFOLIO_CONTENT_URL);
 
 const getBrowserStorage = (): PortfolioStorage | null => {
     if (typeof window === 'undefined') return null;
