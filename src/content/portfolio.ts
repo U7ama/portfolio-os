@@ -500,9 +500,9 @@ export const FALLBACK_PORTFOLIO: PortfolioDataV1 = {
         "name": "Usama Aslam",
         "headline": "Full-Stack Engineer | Applied AI & Cloud",
         "summary": [
-            "Full-stack engineer with 4+ years delivering production SaaS platforms, AI-enabled systems, scalable APIs, and real-time AV/IoT solutions across travel, healthcare, hospitality, and eCommerce.",
-            "Combines strong full-stack fundamentals (React, Next.js, TypeScript, Node.js, Python/FastAPI) with Applied AI architectures, focusing on system reliability, type safety, evaluation-led testing, and automated cloud deployments.",
-            "Focuses on end-to-end software ownership—from early architecture and data modeling to production release—while exploring interactive 3D graphics, desktop web simulations, and creative UI engineering."
+            "Full-stack engineer with 4+ years building production SaaS applications, APIs, and real-time AV/IoT systems across travel, healthcare, hospitality, and e-commerce.",
+            "Builds with React, Next.js, TypeScript, Node.js, and Python/FastAPI, including tenant-scoped AI assistants, multimodal integrations, and retrieval-augmented generation (RAG).",
+            "Work covers architecture, data modeling, testing, and cloud deployment, with a focus on reliability and type safety. Also builds interactive 3D and desktop-style web experiences."
         ],
         "disciplines": [
             "Applied AI",
@@ -567,14 +567,15 @@ export const FALLBACK_PORTFOLIO: PortfolioDataV1 = {
             "role": "Full Stack Engineer",
             "organization": "AlignAV",
             "location": "Remote",
-            "period": "Aug 2024 - Present",
+            "period": "Aug 2024 - Sep 2026",
             "website": "https://www.alignav.com/",
-            "summary": "Full-stack engineering and real-time AV/IoT monitoring platform development with Azure IoT, Next.js, and AI guidance systems.",
+            "summary": "Developed dashboards, edge services, and AI tools for an AV/IoT monitoring platform covering 5,000+ connected devices.",
             "details": [
-                "Led development of asset management and real-time AV/IoT monitoring dashboards for 5,000+ connected devices, coordinating telemetry across edge services and cloud infrastructure.",
-                "Implemented tenant-scoped AI assistance over permitted room/device data and knowledge articles for cited troubleshooting guidance.",
-                "Implemented AI-assisted import mapping with human review safeguards before database commit.",
-                "Managed deployment pipelines with Azure DevOps and Docker, ensuring reliable device telemetry and seamless client onboarding."
+                "Led development of Next.js asset-management and monitoring dashboards for 5,000+ connected devices, with telemetry from edge services and cloud infrastructure.",
+                "Developed edge services and a C# Windows monitoring client connected to Azure IoT Hub.",
+                "Implemented a tenant-scoped, read-only AI assistant providing cited troubleshooting guidance from authorized room/device data and knowledge articles.",
+                "Added AI-assisted import mapping and validation warnings, with human review before records are saved.",
+                "Managed deployment pipelines using Azure DevOps and Docker."
             ]
         },
         {
@@ -584,11 +585,12 @@ export const FALLBACK_PORTFOLIO: PortfolioDataV1 = {
             "location": "Remote",
             "period": "Nov 2023 - Feb 2025",
             "website": "",
-            "summary": "Worked remotely on full stack web applications from initial implementation through integrations and deployment support.",
+            "summary": "Delivered full-stack features, APIs, integrations, and deployment support across seven client products.",
             "details": [
-                "Used React, Node.js, Python/FastAPI, AWS, GCP, Firebase, SQL, Stripe, Shopify, OAuth, Mailgun, OpenAI, and Gemini.",
-                "Integrated multimodal Gemini vision for recipe discovery in Cool Potato, plus OpenAI-assisted journaling in Diary Synergy.",
-                "Contributed across healthcare, hospitality, eCommerce, and travel client products including Sunridge Medical, Lisbon Hop On, Beetkom, MedLab QCS, and Levante Cuisine."
+                "Built frontend features and backend APIs using React, Node.js, and Python/FastAPI.",
+                "Additional technologies included AWS, GCP, Firebase, SQL, Stripe, Shopify, OAuth, and Mailgun.",
+                "Integrated Gemini image analysis for ingredient identification and recipe discovery in Cool Potato, and OpenAI-assisted journaling in Diary Synergy.",
+                "Contributed to Sunridge Medical, Lisbon Hop On, Beetkom, MedLab QCS, and Levante Cuisine."
             ]
         },
         {
@@ -598,12 +600,13 @@ export const FALLBACK_PORTFOLIO: PortfolioDataV1 = {
             "location": "Islamabad",
             "period": "Aug 2022 - Oct 2023",
             "website": "https://www.xecutors.com/",
-            "summary": "Created backend services and frontend integrations for travel, payments, documents, communication, and administrative workflows.",
+            "summary": "Developed backend services and reusable frontend components for travel, payments, messaging, documents, and administrative workflows.",
             "details": [
-                "Coordinated Agile work through daily stand-ups and JIRA while collaborating across reusable frontend and backend deliverables.",
-                "Developed Node.js serverless microservices, routed and secured them through Kong API Gateway, and automated cloud deployment with Terraform across GCP and AWS.",
-                "Built micro frontend packages and web components with Next.js, TypeScript, Stencil.js, and Bit so features could be developed and deployed independently.",
-                "Integrated PostgreSQL, GraphQL and Hasura, Stripe and Braintree, SendGrid, OAuth, WhatsApp Business API, Amadeus, DocuSign, and Adobe PDF generation."
+                "Coordinated Agile delivery through daily stand-ups and Jira.",
+                "Developed Node.js serverless microservices behind Kong API Gateway, using OpenAPI 3 and OAuth.",
+                "Automated AWS/GCP infrastructure with Terraform and deployed Kong Ingress on GKE/Anthos.",
+                "Built independently deployable Next.js/TypeScript microfrontends and reusable web components with Stencil.js and Bit.",
+                "Integrated PostgreSQL and GraphQL/Hasura, alongside Stripe, Braintree, SendGrid, WhatsApp Business API, Amadeus, DocuSign, and Adobe PDF generation."
             ]
         },
         {
@@ -613,10 +616,10 @@ export const FALLBACK_PORTFOLIO: PortfolioDataV1 = {
             "location": "Remote",
             "period": "Mar 2022 - Aug 2022",
             "website": "https://stashtechnologies.com/",
-            "summary": "Built Roomph.pk hotel booking flows with React.js, Node.js, REST APIs, and MongoDB.",
+            "summary": "Built hotel discovery and booking flows for Roomph.pk using React, Node.js, REST APIs, and MongoDB.",
             "details": [
-                "Designed REST endpoints and user-facing booking features with an emphasis on maintainability and reliable data handling.",
-                "Refactored frontend rendering and API usage to reduce redundant work and provide a smoother booking experience."
+                "Developed REST endpoints and user-facing booking features.",
+                "Reduced redundant rendering and API requests through frontend refactoring."
             ]
         }
     ],
@@ -650,7 +653,7 @@ export const FALLBACK_PORTFOLIO: PortfolioDataV1 = {
                 "GraphQL",
                 "WebSockets",
                 "OAuth",
-                "Queues (Redis)",
+                "Redis queues",
                 "Cron jobs",
                 "Third-party integrations"
             ]
@@ -659,10 +662,10 @@ export const FALLBACK_PORTFOLIO: PortfolioDataV1 = {
             "id": "applied-ai",
             "label": "Applied AI",
             "items": [
-                "pgvector RAG with FTS and RRF",
+                "pgvector RAG, full-text search (FTS), and reciprocal-rank fusion (RRF)",
                 "Tenant-scoped AI assistants",
                 "Cited AI guidance",
-                "Bounded tenant-bound tool workflows and agents",
+                "Bounded, tenant-scoped tool workflows and agents",
                 "OpenAI and Gemini integrations",
                 "Multimodal Gemini image analysis",
                 "Structured outputs and runtime validation",
@@ -709,7 +712,7 @@ export const FALLBACK_PORTFOLIO: PortfolioDataV1 = {
     "education": [
         {
             "id": "bscs",
-            "qualification": "BSCS, CGPA 3.30",
+            "qualification": "BSCS, CGPA 3.30/4.00",
             "institution": "PMAS Arid Agriculture University",
             "location": "Rawalpindi",
             "period": "2018 - 2022",
@@ -725,10 +728,10 @@ export const FALLBACK_PORTFOLIO: PortfolioDataV1 = {
         },
         {
             "id": "fsc-pre-engineering",
-            "qualification": "FSC Pre Engineering",
-            "institution": "Punjab College",
+            "qualification": "FSc Pre-Engineering",
+            "institution": "Punjab College of Science",
             "location": "Gujranwala",
-            "period": "2016 - 2018",
+            "period": "2015 - 2017",
             "details": [
                 "Completed pre-engineering studies before beginning the BSCS program."
             ],
@@ -752,12 +755,12 @@ export const FALLBACK_PORTFOLIO: PortfolioDataV1 = {
             "title": "DeviceOps AI Copilot",
             "category": "Applied AI / SaaS / IoT",
             "featuredOrder": null,
-            "summary": "A production-grade Applied AI and IoT copilot for device-operations teams, combining multi-tenant RAG, bounded agentic workflows, approval controls, n8n automation, and an Expo technician client.",
+            "summary": "An AI copilot for device-operations teams, with multi-tenant RAG, cited troubleshooting guidance, approval-gated workflows, signed n8n automation, and an Expo technician app.",
             "details": [
                 "Built a TypeScript workspace with Next.js, PostgreSQL Row-Level Security, pgvector semantic retrieval, PostgreSQL full-text search, and reciprocal-rank fusion for cited troubleshooting guidance.",
-                "Implemented structured diagnoses with Zod validation, tenant-bound read-only tools, prompt-injection defenses, approval-gated incident proposals, idempotency, audit events, and durable SSE run timelines.",
+                "Implemented Zod-validated diagnoses and bounded, tenant-scoped read-only tool workflows, with prompt-injection defenses, approval-gated incident proposals, idempotency, audit events, and durable, reconnectable SSE run timelines.",
                 "Added pg-boss workers and a transactional outbox, signed n8n incident routing with replay protection, and a read-only MCP adapter over authorized application services.",
-                "Created an Expo technician workflow for secure sign-in, room and device context, reconnectable run status, citations, uncertainty, and approval status.",
+                "Created an Expo technician app with secure sign-in, room and device context, reconnectable run status, citations, uncertainty indicators, and approval status.",
                 "Added a 40-case evaluation suite plus unit, API-smoke, contract, MCP, and load checks for retrieval quality, output validity, isolation, retries, and failure handling."
             ],
             "technologies": [
@@ -796,11 +799,12 @@ export const FALLBACK_PORTFOLIO: PortfolioDataV1 = {
             "title": "AlignAV Monitoring",
             "category": "AI / SaaS / IoT",
             "featuredOrder": null,
-            "summary": "Asset management and real-time AV/IoT monitoring for 5,000+ connected devices, rooms, environments, and operational teams.",
+            "summary": "Asset management and real-time monitoring for 5,000+ connected AV/IoT devices, with live room telemetry and AI troubleshooting guidance.",
             "details": [
-                "Built an interactive multi-tenant Next.js dashboard backed by Cosmos DB and WebSockets for live status updates and room telemetry.",
+                "Built a multi-tenant Next.js dashboard with Cosmos DB and WebSockets for live device status and room telemetry.",
                 "Developed edge services and a C# Windows monitoring client communicating with Azure IoT Hub.",
-                "Integrated tenant-scoped AI assistant providing cited troubleshooting steps and intelligent bulk data imports."
+                "Implemented a tenant-scoped, read-only AI assistant providing cited troubleshooting guidance from authorized room/device data and knowledge articles.",
+                "Added AI-assisted import mapping and validation warnings, with human review before records are saved."
             ],
             "technologies": [
                 "Next.js",
@@ -826,11 +830,11 @@ export const FALLBACK_PORTFOLIO: PortfolioDataV1 = {
             "title": "Copilot Travel",
             "category": "Travel / Web Component",
             "featuredOrder": 2,
-            "summary": "A versatile Travel Widget that serves as a comprehensive tool for flight search and customization. It is a plug-and-play web component designed for seamless integration with any website",
+            "summary": "A reusable flight-search and booking web component for integration into existing websites.",
             "details": [
-                "Built as a Next.js and TypeScript frontend packaged as a reusable web component with Stencil.js and Bit.",
+                "Built a Next.js/TypeScript frontend and packaged it as a reusable web component with Stencil.js and Bit.",
                 "Used Apollo GraphQL subgraphs and serverless functions deployed across GCP, AWS, and Azure, with load balancing for performance and availability.",
-                "The architecture was designed as a plug-and-play component that could work independently of the host website technology."
+                "Designed the component to run independently of the host website's frontend framework."
             ],
             "technologies": [
                 "Next.js",
@@ -865,10 +869,11 @@ export const FALLBACK_PORTFOLIO: PortfolioDataV1 = {
             "title": "Roomph.pk",
             "category": "Hospitality / Booking",
             "featuredOrder": 1,
-            "summary": "Roomph.pk is a Hotel Booking Company in Pakistan. Built using React.js and Node.js",
+            "summary": "A hotel discovery and booking platform in Pakistan.",
             "details": [
-                "Web platform for discovering hotels, comparing amenities, checking real-time room availability, and completing bookings.",
-                "Features responsive property profiles, interactive photo galleries, and streamlined multi-step checkout."
+                "Built hotel discovery and booking flows using React, Node.js, MongoDB, and REST APIs.",
+                "Supports hotel discovery, amenity comparison, real-time room availability, and booking, with responsive property profiles, photo galleries, and multi-step checkout.",
+                "Reduced redundant frontend rendering and API requests."
             ],
             "technologies": [
                 "React",
@@ -896,7 +901,7 @@ export const FALLBACK_PORTFOLIO: PortfolioDataV1 = {
             "title": "Xecutors",
             "category": "Travel / Enterprise",
             "featuredOrder": 3,
-            "summary": "Xecutors provides subscription-based digital solutions",
+            "summary": "Full-stack contributions to subscription-based products, including backend services, frontend components, and integrations for travel, payments, documents, and communications.",
             "details": [],
             "technologies": [
                 "Next.js",
@@ -918,10 +923,10 @@ export const FALLBACK_PORTFOLIO: PortfolioDataV1 = {
             "title": "Interactive Portfolio Suite",
             "category": "Portfolio / Three.js",
             "featuredOrder": null,
-            "summary": "A connected set of main, 3D, desktop-style OS, and printable resume experiences presenting the same developer portfolio in different visual formats.",
+            "summary": "A portfolio presented as a main website, a 3D scene, a desktop-style app, and a printable resume.",
             "details": [
-                "The 3D experience uses Three.js and a Blender-authored environment, while its monitor securely embeds the standalone React OS portfolio.",
-                "The OS experience recreates a desktop interface while rendering portfolio pages natively and forwarding a small trusted input-event protocol to the 3D parent."
+                "The Three.js scene uses a Blender-authored environment and embeds the standalone React desktop portfolio in its monitor.",
+                "The React desktop interface renders portfolio pages directly and forwards trusted input events to the surrounding 3D scene."
             ],
             "technologies": [
                 "Next.js",
@@ -964,10 +969,10 @@ export const FALLBACK_PORTFOLIO: PortfolioDataV1 = {
             "title": "Cool Potato",
             "category": "AI / SaaS",
             "featuredOrder": null,
-            "summary": "An AI-powered recipe application that detects food items in images and suggests personalized recipes based on user preferences and dietary needs, including diabetic-friendly options.",
+            "summary": "A recipe app that identifies ingredients in food images and suggests recipes based on user preferences and dietary needs, including diabetic-friendly options.",
             "details": [
-                "Integrated Gemini image understanding to identify ingredients from food images and combine them with dietary-aware recipe discovery.",
-                "A potato character presents recipes in an engaging format, while community features help users organize and participate in food festivals.",
+                "Integrated Gemini image analysis to identify ingredients and support recipe discovery based on dietary preferences.",
+                "Includes a potato mascot that presents recipes, plus community tools for organizing and joining food festivals.",
                 "Features schema-validated ingredient extraction, automated quality checks, and dietary-aware recipe retrieval."
             ],
             "technologies": [
@@ -991,9 +996,10 @@ export const FALLBACK_PORTFOLIO: PortfolioDataV1 = {
             "title": "Sunridge Medical",
             "category": "Healthcare / Web Application",
             "featuredOrder": null,
-            "summary": "Built a medical-clinic operations dashboard for employees to manage patients, treatments, lab results, progress, communications, room assignments, appointments, and task status.",
+            "summary": "Built a clinic operations dashboard for patient records, appointments, treatment tracking, lab results, and staff workflows.",
             "details": [
-                "Integrated Google Calendar scheduling, detailed reporting, suggested treatments and medicines, and a Shopify-connected dispensing workflow."
+                "Included progress tracking, staff communications, room assignments, and task management.",
+                "Integrated Google Calendar scheduling, reporting, treatment and medicine suggestions, and a Shopify-connected dispensing workflow."
             ],
             "technologies": [
                 "MongoDB",
@@ -1019,9 +1025,9 @@ export const FALLBACK_PORTFOLIO: PortfolioDataV1 = {
             "title": "MedLab QCS",
             "category": "Healthcare / SaaS",
             "featuredOrder": null,
-            "summary": "A precision-management platform for quality assurance in medical laboratories.",
+            "summary": "A laboratory quality-assurance platform for tracking equipment, calibrations, audits, and inventory.",
             "details": [
-                "Enables administrators to manage staff, instrument maintenance, calibrations, reagents, device temperature logs, audits, software, inventory, and Google Workspace records."
+                "Administrators can manage staff, instrument maintenance, calibrations, reagents, device temperature logs, audits, software, inventory, and Google Workspace records."
             ],
             "technologies": [
                 "React",
@@ -1043,7 +1049,7 @@ export const FALLBACK_PORTFOLIO: PortfolioDataV1 = {
             "title": "eTravelo",
             "category": "Travel / Web Application",
             "featuredOrder": null,
-            "summary": "Travel product work covering frontend, backend services, integrations, and operational workflows.",
+            "summary": "Contributions to frontend features, backend services, integrations, and operational workflows for a travel application.",
             "details": [],
             "technologies": [
                 "Next.js",
@@ -1064,7 +1070,7 @@ export const FALLBACK_PORTFOLIO: PortfolioDataV1 = {
             "title": "Lisbon Hop On",
             "category": "Travel / Web Application",
             "featuredOrder": null,
-            "summary": "A travel application delivered during Olumi Tech work with full stack implementation and deployment support.",
+            "summary": "Contributed full-stack implementation and deployment support to a travel application during Olumi Tech work.",
             "details": [],
             "technologies": [
                 "React",
@@ -1154,7 +1160,7 @@ export const FALLBACK_PORTFOLIO: PortfolioDataV1 = {
             "title": "Pixel Copy",
             "category": "Content / Web Application",
             "featuredOrder": null,
-            "summary": "A copywriting-team website with writing samples and dynamically managed blog content.",
+            "summary": "A website for a copywriting team, with writing samples and a CMS-managed blog.",
             "details": [
                 "Used DatoCMS and GraphQL so editors could update content without code changes."
             ],
@@ -1177,10 +1183,11 @@ export const FALLBACK_PORTFOLIO: PortfolioDataV1 = {
             "title": "Diary Synergy AI Diary Assistant",
             "category": "AI / SaaS",
             "featuredOrder": null,
-            "summary": "An AI-powered daily diary application that helps users write entries based on their mood.",
+            "summary": "A journal app with mood-based AI writing assistance, privacy controls, and a subscription community.",
             "details": [
-                "Includes a subscription community where users can discover, connect, and chat with like-minded people.",
-                "Includes user-controlled mood-based journal entries, privacy controls, and contextual AI writing assistance."
+                "Integrated OpenAI-assisted journaling for mood-based entries.",
+                "The subscription community lets users discover, connect, and chat with like-minded people.",
+                "Users control mood-based entries and privacy settings, with contextual AI writing assistance."
             ],
             "technologies": [
                 "Node.js",
@@ -1215,7 +1222,7 @@ export const FALLBACK_PORTFOLIO: PortfolioDataV1 = {
             "title": "Amici Friends App",
             "category": "Social / Productivity",
             "featuredOrder": null,
-            "summary": "A friend-organization application that brings contacts from multiple social platforms together and supports reminders for birthdays, chats, and meetings.",
+            "summary": "A contact-management app that combines contacts from social platforms and supports birthday, chat, and meeting reminders.",
             "details": [],
             "technologies": [
                 "Node.js",
@@ -1230,10 +1237,10 @@ export const FALLBACK_PORTFOLIO: PortfolioDataV1 = {
             "title": "Kong API Gateway Platform",
             "category": "Cloud / API Management",
             "featuredOrder": null,
-            "summary": "API-management infrastructure used to regulate traffic and secure serverless cloud functions.",
+            "summary": "Kong infrastructure for routing serverless APIs and controlling access with OAuth.",
             "details": [
                 "Deployed Kong Ingress on Google Kubernetes Engine with Anthos and published OpenAPI 3 specifications through the developer portal.",
-                "Added OAuth-based access control and Terraform-managed infrastructure for scalable, documented API delivery."
+                "Added OAuth access control and managed infrastructure with Terraform."
             ],
             "technologies": [
                 "Kong",
@@ -1252,7 +1259,7 @@ export const FALLBACK_PORTFOLIO: PortfolioDataV1 = {
             "title": "Levante Cuisine",
             "category": "Hospitality / Web Application",
             "featuredOrder": null,
-            "summary": "A hospitality web project delivered during my Olumi Tech work. Its former public domain no longer represents this project.",
+            "summary": "A hospitality web application delivered during Olumi Tech work. Its former public domain no longer represents this project.",
             "details": [],
             "technologies": [
                 "React",
@@ -1275,6 +1282,7 @@ export const FALLBACK_PORTFOLIO: PortfolioDataV1 = {
             "id": "development",
             "label": "Development",
             "items": [
+                "Claude Code and OpenAI Codex for AI-assisted development, with engineering review and validation.",
                 "Visual Studio Code with the Atom One Dark theme and Operator Mono for day-to-day development.",
                 "Brave as the primary browser for development and general use.",
                 "React for component-oriented frontend development.",
