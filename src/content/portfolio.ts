@@ -751,6 +751,56 @@ export const FALLBACK_PORTFOLIO: PortfolioDataV1 = {
     ],
     "projects": [
         {
+            "id": "blindspot-edu",
+            "title": "Blindspot Edu",
+            "category": "Applied AI / Education",
+            "featuredOrder": null,
+            "summary": "An AI learning platform that turns lecture recordings into guided lessons, identifies missing prerequisites, and connects explanations to timestamped source evidence.",
+            "details": [
+                "Built a Next.js and FastAPI application with audio/video upload, supported YouTube and direct-media imports, and in-browser lecture recording.",
+                "Combined faster-whisper transcription and Qwen reasoning to check prerequisite coverage across the recording and generate guided learning paths, explanations, and worked examples.",
+                "Implemented diagnostic checks and different reassessment questions, with saved learner progress and inspectable transcript excerpts beside the lesson.",
+                "Added resumable background processing, transcript and model-response caches, and isolated anonymous learner sessions for private uploads and progress.",
+                "Deployed on AWS EC2 with private S3 media storage, optional Polly narration, SES completion emails, CloudFormation infrastructure, and Systems Manager operations."
+            ],
+            "technologies": [
+                "Next.js",
+                "TypeScript",
+                "Python",
+                "FastAPI",
+                "faster-whisper",
+                "Qwen",
+                "SQLite",
+                "AWS EC2",
+                "Amazon S3",
+                "Amazon Polly",
+                "Amazon SES",
+                "CloudFormation",
+                "Caddy"
+            ],
+            "links": [
+                {
+                    "label": "Website",
+                    "url": "https://blindspot-edu.online"
+                },
+                {
+                    "label": "Repository",
+                    "url": "https://github.com/U7ama/blindspot-edu"
+                },
+                {
+                    "label": "Demo",
+                    "url": "https://youtu.be/krE6TKkHGLw"
+                }
+            ],
+            "videos": [
+                {
+                    "provider": "youtube",
+                    "id": "krE6TKkHGLw",
+                    "caption": "Blindspot Edu learning journey and AWS deployment demonstration"
+                }
+            ]
+        },
+        {
             "id": "deviceops-ai-copilot",
             "title": "DeviceOps AI Copilot",
             "category": "Applied AI / SaaS / IoT",
