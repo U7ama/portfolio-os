@@ -580,10 +580,10 @@ export const FALLBACK_PORTFOLIO: PortfolioDataV1 = {
         },
         {
             "id": "olumi-tech",
-            "role": "Full Stack Developer",
+            "role": "Node.js Developer",
             "organization": "Olumi Tech",
             "location": "Remote",
-            "period": "Nov 2023 - Feb 2025",
+            "period": "Nov 2023 - Jan 2025",
             "website": "",
             "summary": "Delivered full-stack features, APIs, integrations, and deployment support across seven client products.",
             "details": [
@@ -611,7 +611,7 @@ export const FALLBACK_PORTFOLIO: PortfolioDataV1 = {
         },
         {
             "id": "stash-technologies",
-            "role": "MERN Stack Developer",
+            "role": "React/Node.js Developer",
             "organization": "Stash Technologies",
             "location": "Remote",
             "period": "Mar 2022 - Aug 2022",
@@ -880,7 +880,7 @@ export const FALLBACK_PORTFOLIO: PortfolioDataV1 = {
             "title": "Copilot Travel",
             "category": "Travel / Web Component",
             "featuredOrder": 2,
-            "summary": "A reusable flight-search and booking web component for integration into existing websites.",
+            "summary": "A reusable flight-search and booking web component delivered through Xecutors for integration into existing websites.",
             "details": [
                 "Built a Next.js/TypeScript frontend and packaged it as a reusable web component with Stencil.js and Bit.",
                 "Used Apollo GraphQL subgraphs and serverless functions deployed across GCP, AWS, and Azure, with load balancing for performance and availability.",
