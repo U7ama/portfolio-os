@@ -563,6 +563,18 @@ export const FALLBACK_PORTFOLIO: PortfolioDataV1 = {
     ],
     "experience": [
         {
+            "id": "freelance-upwork",
+            "role": "Full Stack Engineer",
+            "organization": "Freelance via Upwork",
+            "location": "Remote",
+            "period": "Jul 2024 - Present",
+            "website": "https://www.upwork.com/freelancers/usamaa241?mp_source=share",
+            "summary": "Provide freelance full-stack development services to clients through Upwork.",
+            "details": [
+                "Work independently through Upwork on full-stack development."
+            ]
+        },
+        {
             "id": "alignav",
             "role": "Full Stack Engineer",
             "organization": "AlignAV",
