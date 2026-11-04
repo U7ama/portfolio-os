@@ -553,7 +553,7 @@ export const FALLBACK_PORTFOLIO: PortfolioDataV1 = {
         {
             "id": "upwork",
             "label": "Upwork",
-            "url": "https://www.upwork.com/freelancers/usamaa241?mp_source=share"
+            "url": "https://www.upwork.com/freelancers/~0132997a5f96d10b1f"
         },
         {
             "id": "resume",
@@ -566,9 +566,9 @@ export const FALLBACK_PORTFOLIO: PortfolioDataV1 = {
             "id": "freelance-upwork",
             "role": "Full Stack Engineer",
             "organization": "Freelance via Upwork",
-            "location": "Remote",
+            "location": "Remote (Gujranwala)",
             "period": "Jul 2024 - Present",
-            "website": "https://www.upwork.com/freelancers/usamaa241?mp_source=share",
+            "website": "https://www.upwork.com/freelancers/~0132997a5f96d10b1f",
             "summary": "Provide freelance full-stack development services to clients through Upwork.",
             "details": [
                 "Work independently through Upwork on full-stack development."
@@ -578,7 +578,7 @@ export const FALLBACK_PORTFOLIO: PortfolioDataV1 = {
             "id": "alignav",
             "role": "Full Stack Engineer",
             "organization": "AlignAV",
-            "location": "Remote",
+            "location": "Remote (Gujranwala)",
             "period": "Aug 2024 - Sep 2026",
             "website": "https://www.alignav.com/",
             "summary": "Developed dashboards, edge services, and AI tools for an AV/IoT monitoring platform covering 5,000+ connected devices.",
@@ -594,7 +594,7 @@ export const FALLBACK_PORTFOLIO: PortfolioDataV1 = {
             "id": "olumi-tech",
             "role": "Node.js Developer",
             "organization": "Olumi Tech",
-            "location": "Remote",
+            "location": "Remote (Gujranwala)",
             "period": "Nov 2023 - Jan 2025",
             "website": "",
             "summary": "Delivered full-stack features, APIs, integrations, and deployment support across seven client products.",
@@ -625,7 +625,7 @@ export const FALLBACK_PORTFOLIO: PortfolioDataV1 = {
             "id": "stash-technologies",
             "role": "React/Node.js Developer",
             "organization": "Stash Technologies",
-            "location": "Remote",
+            "location": "Remote (Islamabad)",
             "period": "Mar 2022 - Aug 2022",
             "website": "https://stashtechnologies.com/",
             "summary": "Built hotel discovery and booking flows for Roomph.pk using React, Node.js, REST APIs, and MongoDB.",
