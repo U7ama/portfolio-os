@@ -21,21 +21,25 @@ code {
 @font-face {
     font-family: MSSerif;
     src: url(./assets/fonts/MSSansSerif.ttf);
+    font-display: swap;
 }
 
 @font-face {
     font-family: Millennium;
     src: url(./assets/fonts/Millennium.ttf);
+    font-display: swap;
 }
 
 @font-face {
     font-family: MillenniumBold;
     src: url(./assets/fonts/Millennium-Bold.ttf);
+    font-display: swap;
 }
 
 @font-face {
     font-family: Terminal;
     src: url(./assets/fonts/Terminal.ttf);
+    font-display: swap;
 }
 
 
