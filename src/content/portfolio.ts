@@ -558,7 +558,7 @@ export const FALLBACK_PORTFOLIO: PortfolioDataV1 = {
         {
             "id": "resume",
             "label": "Resume",
-            "url": "https://u7ama.github.io/resume/"
+            "url": "https://resume.usamaaslam.site/"
         }
     ],
     "experience": [
@@ -1422,7 +1422,7 @@ export const FALLBACK_PORTFOLIO: PortfolioDataV1 = {
         {
             "id": "resume",
             "label": "Resume",
-            "url": "https://u7ama.github.io/resume/"
+            "url": "https://resume.usamaaslam.site/"
         }
     ]
 };

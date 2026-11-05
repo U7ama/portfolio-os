@@ -15,7 +15,7 @@ const ResumeDownload: React.FC<ResumeDownloadProps> = ({ altText }) => {
                 <a
                     rel="noopener noreferrer"
                     target="_blank"
-                    href="https://u7ama.github.io/resume/"
+                    href="https://resume.usamaaslam.site/"
                 >
                     <p>Click here to see it!</p>
                 </a>
