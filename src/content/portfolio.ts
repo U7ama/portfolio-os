@@ -766,7 +766,7 @@ export const FALLBACK_PORTFOLIO: PortfolioDataV1 = {
             "id": "blindspot-edu",
             "title": "Blindspot Edu",
             "category": "Applied AI / Education",
-            "featuredOrder": null,
+            "featuredOrder": 2,
             "summary": "An AI learning platform that turns lecture recordings into guided lessons, identifies missing prerequisites, and connects explanations to timestamped source evidence.",
             "details": [
                 "Built a Next.js and FastAPI application with audio/video upload, supported YouTube and direct-media imports, and in-browser lecture recording.",
@@ -860,7 +860,7 @@ export const FALLBACK_PORTFOLIO: PortfolioDataV1 = {
             "id": "alignav-monitoring",
             "title": "AlignAV Monitoring",
             "category": "AI / SaaS / IoT",
-            "featuredOrder": null,
+            "featuredOrder": 1,
             "summary": "Asset management and real-time monitoring for 5,000+ connected AV/IoT devices, with live room telemetry and AI troubleshooting guidance.",
             "details": [
                 "Built a multi-tenant Next.js dashboard with Cosmos DB and WebSockets for live device status and room telemetry.",
@@ -891,7 +891,7 @@ export const FALLBACK_PORTFOLIO: PortfolioDataV1 = {
             "id": "copilot-travel",
             "title": "Copilot Travel",
             "category": "Travel / Web Component",
-            "featuredOrder": 2,
+            "featuredOrder": 3,
             "summary": "A reusable flight-search and booking web component delivered through Xecutors for integration into existing websites.",
             "details": [
                 "Built a Next.js/TypeScript frontend and packaged it as a reusable web component with Stencil.js and Bit.",
@@ -930,7 +930,7 @@ export const FALLBACK_PORTFOLIO: PortfolioDataV1 = {
             "id": "roomph",
             "title": "Roomph.pk",
             "category": "Hospitality / Booking",
-            "featuredOrder": 1,
+            "featuredOrder": null,
             "summary": "A hotel discovery and booking platform in Pakistan.",
             "details": [
                 "Built hotel discovery and booking flows using React, Node.js, MongoDB, and REST APIs.",
@@ -962,7 +962,7 @@ export const FALLBACK_PORTFOLIO: PortfolioDataV1 = {
             "id": "xecutors-platforms",
             "title": "Xecutors",
             "category": "Travel / Enterprise",
-            "featuredOrder": 3,
+            "featuredOrder": null,
             "summary": "Full-stack contributions to subscription-based products, including backend services, frontend components, and integrations for travel, payments, documents, and communications.",
             "details": [],
             "technologies": [
